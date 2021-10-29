@@ -5,12 +5,12 @@
 //  Created by Эмиль Яйлаев on 14.10.2021.
 //
 
-struct VK {
-    static let data = Data.self
+struct Data {
+    static let appConfig = AppConfig.self
     static let keys = Keys.self
     static let urls = URLs.self
 }
-struct Data {
+struct AppConfig {
     static let authUrl = "https://oauth.vk.com"
     static let authorizeUrl = authUrl+"/authorize"
     static let accessTokenUrl = authUrl+"/access_token"
@@ -27,8 +27,8 @@ struct Keys {
     static let tokenVK = "tokenVK"
 }
 struct URLs {
-    static let authorizeUrl = String(format: "%@?client_id=%@&display=%@&redirect_uri=%@&scope=%@&response_type=%@&v=%@", arguments: [VK.data.authorizeUrl,VK.data.clientId,VK.data.display,VK.data.redirectUri,VK.data.scope,"code",VK.data.version])
+    static let authorizeUrl = String(format: "%@?client_id=%@&display=%@&redirect_uri=%@&scope=%@&response_type=%@&v=%@", arguments: [Data.appConfig.authorizeUrl,Data.appConfig.clientId,Data.appConfig.display,Data.appConfig.redirectUri,Data.appConfig.scope,"code",Data.appConfig.version])
     static func accessTokenUrl (code:String)->String{
-        return String(format: "%@?client_id=%@&client_secret=%@&redirect_uri=%@&code=%@",arguments:[VK.data.accessTokenUrl,VK.data.clientId,VK.data.clientSecret,VK.data.redirectUri,code])
+        return String(format: "%@?client_id=%@&client_secret=%@&redirect_uri=%@&code=%@",arguments:[Data.appConfig.accessTokenUrl,Data.appConfig.clientId,Data.appConfig.clientSecret,Data.appConfig.redirectUri,code])
     }
 }

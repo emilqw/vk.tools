@@ -36,12 +36,12 @@ class RegDateViewController:UIViewController {
         }
     }
     func viewRegDate(_ userId:String? = nil){
-        if let accessToken = UserDefaults.standard.string(forKey: VK.keys.tokenVK) {
-            VKApi.users.get(accessToken: accessToken, userIds: userId){user in
+        if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
+            VK.users.get(accessToken: accessToken, userIds: userId){user in
                 if let user = user {
                     if user.error == nil {
                         if user.response.count > 0 {
-                            VKApi.getRegDate(userID: String(user.response[0].id!)){regDate in
+                            VK.getRegDate(userID: String(user.response[0].id!)){regDate in
                                 if let regDate = regDate {
                                     DispatchQueue.main.async {
                                         self.activityIndicator.isHidden = true

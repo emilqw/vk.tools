@@ -41,7 +41,7 @@ class PageIdViewController:UIViewController {
             if(pageId.isInt){
                 self.viewPageId(pageId)
             }else{
-                if let accessToken = UserDefaults.standard.string(forKey: VK.keys.tokenVK) {
+                if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
                     resolveScreenName(accessToken: accessToken, screenName: pageId)
                 } else {
                     activityIndicator.isHidden = true
@@ -53,8 +53,8 @@ class PageIdViewController:UIViewController {
         }
     }
     func viewPageId(_ userId:String? = nil){
-        if let accessToken = UserDefaults.standard.string(forKey: VK.keys.tokenVK) {
-            VKApi.users.get(accessToken: accessToken, userIds: userId, fields:Fields.create(.domain)){user in
+        if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
+            VK.users.get(accessToken: accessToken, userIds: userId, fields:Fields.create(.domain)){user in
                 if let user = user {
                     if user.error == nil {
                         if user.response.count > 0 {
@@ -96,7 +96,7 @@ class PageIdViewController:UIViewController {
         }
     }
     func resolveScreenName(accessToken:String,screenName:String) -> Void {
-        VKApi.utils.resolveScreenName(accessToken: accessToken, screenName:screenName){resolveScreenName in
+        VK.utils.resolveScreenName(accessToken: accessToken, screenName:screenName){resolveScreenName in
             if let resolveScreenName = resolveScreenName {
                 DispatchQueue.main.async {
                     if(resolveScreenName.error == nil){

@@ -17,8 +17,8 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Do any additional setup after loading the view.
-        if let accessToken = UserDefaults.standard.string(forKey: VK.keys.tokenVK) {
-            VKApi.users.get(accessToken: accessToken, fields: Fields.create(.domain,.status,.photo_max_orig)){user in
+        if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
+            VK.users.get(accessToken: accessToken, fields: Fields.create(.domain,.status,.photo_max_orig)){user in
                 if let user = user {
                     DispatchQueue.main.async {
                         self.fullName.text = user.response[0].last_name!+" "+user.response[0].first_name!
@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
     @IBAction func onLogout(_ sender: Any) {
         clearAllDataWKWebsite()
         let defaults = UserDefaults.standard
-        defaults.set("", forKey: VK.keys.tokenVK)
+        defaults.set("", forKey: Data.keys.tokenVK)
         let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController =  storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
         present(newViewController, animated: true, completion: nil)

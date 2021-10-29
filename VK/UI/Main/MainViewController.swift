@@ -13,10 +13,10 @@ class MainViewController:UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        VKAuth.getServiceKey{accessToken in
+        VK.auth.getServiceKey{accessToken in
             if let accessToken = accessToken {
-                if let token = UserDefaults.standard.string(forKey: VK.keys.tokenVK) {
-                    VKAuth.checkToken(accessToken: accessToken, token: token){ auth in
+                if let token = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
+                    VK.auth.checkToken(accessToken: accessToken, token: token){ auth in
                         if auth {
                             self.goAppViewController()
                         }else {

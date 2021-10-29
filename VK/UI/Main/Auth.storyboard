@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7C-6O-exm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7C-6O-exm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,13 +32,13 @@
         <!--VK-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="LoginViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="LoginViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evj-0q-be0">
-                                <rect key="frame" x="16" y="324" width="568" height="48"/>
+                                <rect key="frame" x="16" y="477" width="382" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="92W-WW-3fr"/>
                                 </constraints>
@@ -45,7 +46,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Вход VK"/>
                                 <connections>
-                                    <segue destination="Klo-pj-7qh" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="qCx-1e-g88"/>
+                                    <segue destination="Klo-pj-7qh" kind="show" id="qCx-1e-g88"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,23 +58,29 @@
                             <constraint firstItem="Evj-0q-be0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fHm-fJ-Z1W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="VK" id="lqs-iM-MWo"/>
+                    <navigationItem key="navigationItem" title="VK" id="lqs-iM-MWo">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="IY8-ae-SO6"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-881" y="102"/>
         </scene>
-        <!--Auth View Controller-->
+        <!--Авторизация-->
         <scene sceneID="Ce0-1J-Ss9">
             <objects>
-                <viewController id="Klo-pj-7qh" customClass="AuthViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Klo-pj-7qh" customClass="AuthViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b0V-sU-V4u" customClass="AuthViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="UVd-MN-cQc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="W8t-sB-8WK"/>
+                    <navigationItem key="navigationItem" title="Авторизация" largeTitleDisplayMode="never" id="W8t-sB-8WK">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yS1-bC-HZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

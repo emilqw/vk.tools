@@ -15,14 +15,14 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
         webView = WKWebView()
         webView.navigationDelegate = self
         view = webView
-        let urlRequest = URLRequest.init(url: URL.init(string: VK.urls.authorizeUrl)!)
+        let urlRequest = URLRequest.init(url: URL.init(string: Data.urls.authorizeUrl)!)
         webView.load(urlRequest)
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let urlStr = navigationAction.request.url?.absoluteString {
             let urlParser = URLParser(url: urlStr)
             if let code = urlParser.checkHashByName(name: "code"){
-                URLSession.shared.dataTask(with: URL(string:VK.urls.accessTokenUrl(code: code))!){data,response,error in
+                URLSession.shared.dataTask(with: URL(string:Data.urls.accessTokenUrl(code: code))!){data, response, error in
                     
                     if let error = error{print(error)
                         return
@@ -33,7 +33,7 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
                         if methodAuth.error == nil {
                             DispatchQueue.main.async {
                                 let defaults = UserDefaults.standard
-                                defaults.set(methodAuth.access_token, forKey: VK.keys.tokenVK)
+                                defaults.set(methodAuth.access_token, forKey: Data.keys.tokenVK)
                                 let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                 let newViewController =  storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
                                 self.present(newViewController, animated: true, completion: nil)
