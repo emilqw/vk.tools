@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; configuration.title = "Вход VK"; ObjectID = "Evj-0q-be0"; */
+"Evj-0q-be0.configuration.title" = "Вход VK";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Evj-0q-be0"; */
+"Evj-0q-be0.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Друзья"; ObjectID = "INt-7j-KIn"; */
+"INt-7j-KIn.title" = "Друзья";
+
+/* Class = "UINavigationItem"; title = "VK"; ObjectID = "lqs-iM-MWo"; */
+"lqs-iM-MWo.title" = "VK";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "rGx-sN-cEH"; */
+"rGx-sN-cEH.text" = "Name";
+
+/* Class = "UITabBarItem"; title = "Профиль"; ObjectID = "vlr-2C-XpM"; */
+"vlr-2C-XpM.title" = "Профиль";
