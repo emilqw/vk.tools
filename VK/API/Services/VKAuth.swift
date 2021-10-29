@@ -15,7 +15,7 @@ class VKAuth {
             }
             guard let data = data else { return }
             do {
-                let methodAuth = try JSONDecoder().decode(MethodAuth.self, from: data)
+                let methodAuth = try JSONDecoder().decode(ModelAuth.self, from: data)
                 if methodAuth.access_token != nil {
                     completion(methodAuth.access_token)
                 }else{
@@ -40,7 +40,7 @@ class VKAuth {
             }
             guard let data = data else { return }
             do {
-                let secureCheckToken = try JSONDecoder().decode(MethodSecureCheckToken.self, from: data)
+                let secureCheckToken = try JSONDecoder().decode(ModelSecureCheckToken.self, from: data)
                 print(secureCheckToken)
                 if secureCheckToken.error == nil {
                         completion(true)

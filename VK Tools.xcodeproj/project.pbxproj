@@ -13,9 +13,9 @@
 		20147B332728070D00DE4462 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20147B322728070D00DE4462 /* Fields.swift */; };
 		2023BAC72729D6690038A780 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023BAC62729D6690038A780 /* ImageView.swift */; };
 		202B1719271E1AFF002C5AA2 /* VKAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B1718271E1AFF002C5AA2 /* VKAuth.swift */; };
-		202B171B271E236B002C5AA2 /* MethodAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171A271E236B002C5AA2 /* MethodAuth.swift */; };
-		202B171D271E270A002C5AA2 /* MethodSecureCheckToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171C271E270A002C5AA2 /* MethodSecureCheckToken.swift */; };
-		202B171F271E27A5002C5AA2 /* MethodError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171E271E27A5002C5AA2 /* MethodError.swift */; };
+		202B171B271E236B002C5AA2 /* ModelAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171A271E236B002C5AA2 /* ModelAuth.swift */; };
+		202B171D271E270A002C5AA2 /* ModelSecureCheckToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171C271E270A002C5AA2 /* ModelSecureCheckToken.swift */; };
+		202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171E271E27A5002C5AA2 /* ModelError.swift */; };
 		204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF19627183AC6005D8C1B /* AuthViewController.swift */; };
 		2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2066C4B02721F25200464C18 /* RegDateViewController.swift */; };
 		208BF4392718613000F07B6F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF4382718613000F07B6F /* Data.swift */; };
@@ -28,13 +28,15 @@
 		2092700C27170A9B00B9B78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2092700A27170A9B00B9B78D /* Main.storyboard */; };
 		2092700E27170A9C00B9B78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2092700D27170A9C00B9B78D /* Assets.xcassets */; };
 		2092701127170A9C00B9B78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2092700F27170A9C00B9B78D /* LaunchScreen.storyboard */; };
-		20927019271747EE00B9B78D /* MethodUsersGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20927018271747EE00B9B78D /* MethodUsersGet.swift */; };
+		20927019271747EE00B9B78D /* ModelUsersGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20927018271747EE00B9B78D /* ModelUsersGet.swift */; };
+		20A9CA3D272C78180035305E /* ModelFriendsGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9CA3C272C78180035305E /* ModelFriendsGet.swift */; };
+		20A9CA40272C7B190035305E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9CA3F272C7B190035305E /* Global.swift */; };
 		20B3B7F2272724D60080341C /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7F1272724D60080341C /* Auth.storyboard */; };
 		20B3B7F62727272A0080341C /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7F52727272A0080341C /* App.storyboard */; };
 		20B3B7F9272727D30080341C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7F8272727D30080341C /* Profile.storyboard */; };
 		20B3B7FC272728BC0080341C /* Functions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7FB272728BC0080341C /* Functions.storyboard */; };
 		20B46E0F2722A918000AA82F /* DateConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E0E2722A918000AA82F /* DateConvert.swift */; };
-		20B46E11272310D2000AA82F /* MethodUtilsResolveScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E10272310D2000AA82F /* MethodUtilsResolveScreenName.swift */; };
+		20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */; };
 		20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E1227231204000AA82F /* PageIdViewController.swift */; };
 		20E5296A2722003500B38F91 /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E529692722003500B38F91 /* VKApi.swift */; };
 /* End PBXBuildFile section */
@@ -46,9 +48,9 @@
 		20147B322728070D00DE4462 /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 		2023BAC62729D6690038A780 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		202B1718271E1AFF002C5AA2 /* VKAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuth.swift; sourceTree = "<group>"; };
-		202B171A271E236B002C5AA2 /* MethodAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodAuth.swift; sourceTree = "<group>"; };
-		202B171C271E270A002C5AA2 /* MethodSecureCheckToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSecureCheckToken.swift; sourceTree = "<group>"; };
-		202B171E271E27A5002C5AA2 /* MethodError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodError.swift; sourceTree = "<group>"; };
+		202B171A271E236B002C5AA2 /* ModelAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAuth.swift; sourceTree = "<group>"; };
+		202B171C271E270A002C5AA2 /* ModelSecureCheckToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSecureCheckToken.swift; sourceTree = "<group>"; };
+		202B171E271E27A5002C5AA2 /* ModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelError.swift; sourceTree = "<group>"; };
 		204DF19627183AC6005D8C1B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		2066C4B02721F25200464C18 /* RegDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegDateViewController.swift; sourceTree = "<group>"; };
 		208BF4382718613000F07B6F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -63,13 +65,15 @@
 		2092700D27170A9C00B9B78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2092701027170A9C00B9B78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2092701227170A9C00B9B78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20927018271747EE00B9B78D /* MethodUsersGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodUsersGet.swift; sourceTree = "<group>"; };
+		20927018271747EE00B9B78D /* ModelUsersGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUsersGet.swift; sourceTree = "<group>"; };
+		20A9CA3C272C78180035305E /* ModelFriendsGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFriendsGet.swift; sourceTree = "<group>"; };
+		20A9CA3F272C7B190035305E /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		20B3B7F1272724D60080341C /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		20B3B7F52727272A0080341C /* App.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = App.storyboard; sourceTree = "<group>"; };
 		20B3B7F8272727D30080341C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		20B3B7FB272728BC0080341C /* Functions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Functions.storyboard; sourceTree = "<group>"; };
 		20B46E0E2722A918000AA82F /* DateConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConvert.swift; sourceTree = "<group>"; };
-		20B46E10272310D2000AA82F /* MethodUtilsResolveScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodUtilsResolveScreenName.swift; sourceTree = "<group>"; };
+		20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtilsResolveScreenName.swift; sourceTree = "<group>"; };
 		20B46E1227231204000AA82F /* PageIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdViewController.swift; sourceTree = "<group>"; };
 		20E529692722003500B38F91 /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +162,55 @@
 			path = VK;
 			sourceTree = "<group>";
 		};
+		20A9CA37272C77380035305E /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				20927018271747EE00B9B78D /* ModelUsersGet.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		20A9CA38272C77410035305E /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				20A9CA3C272C78180035305E /* ModelFriendsGet.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		20A9CA39272C77590035305E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		20A9CA3A272C77A00035305E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				202B171A271E236B002C5AA2 /* ModelAuth.swift */,
+				202B171C271E270A002C5AA2 /* ModelSecureCheckToken.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		20A9CA3B272C77B40035305E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				202B171E271E27A5002C5AA2 /* ModelError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		20A9CA3E272C7B020035305E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				20A9CA3F272C7B190035305E /* Global.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		20B3B7F3272726760080341C /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,11 +285,12 @@
 		20ECA7362725D10A007DB8F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				20927018271747EE00B9B78D /* MethodUsersGet.swift */,
-				202B171A271E236B002C5AA2 /* MethodAuth.swift */,
-				202B171C271E270A002C5AA2 /* MethodSecureCheckToken.swift */,
-				202B171E271E27A5002C5AA2 /* MethodError.swift */,
-				20B46E10272310D2000AA82F /* MethodUtilsResolveScreenName.swift */,
+				20A9CA3E272C7B020035305E /* Global */,
+				20A9CA3A272C77A00035305E /* Auth */,
+				20A9CA39272C77590035305E /* Utils */,
+				20A9CA37272C77380035305E /* Users */,
+				20A9CA38272C77410035305E /* Friends */,
+				20A9CA3B272C77B40035305E /* Error */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,28 +383,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				208BF43B271870EE00F07B6F /* URLParser.swift in Sources */,
-				20B46E11272310D2000AA82F /* MethodUtilsResolveScreenName.swift in Sources */,
+				20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */,
 				208BF43F2718866B00F07B6F /* MainViewController.swift in Sources */,
 				20147B332728070D00DE4462 /* Fields.swift in Sources */,
+				20A9CA3D272C78180035305E /* ModelFriendsGet.swift in Sources */,
 				202B1719271E1AFF002C5AA2 /* VKAuth.swift in Sources */,
 				20120AEA272AFA0B00BC150A /* Label.swift in Sources */,
 				204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */,
 				208BF4392718613000F07B6F /* Data.swift in Sources */,
 				2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */,
 				2023BAC72729D6690038A780 /* ImageView.swift in Sources */,
-				202B171B271E236B002C5AA2 /* MethodAuth.swift in Sources */,
+				202B171B271E236B002C5AA2 /* ModelAuth.swift in Sources */,
 				2092700927170A9B00B9B78D /* LoginViewController.swift in Sources */,
 				20120AEC272B23F300BC150A /* String.swift in Sources */,
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
-				202B171F271E27A5002C5AA2 /* MethodError.swift in Sources */,
+				202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */,
 				208BF4412718C4DE00F07B6F /* ProfileViewController.swift in Sources */,
 				20B46E0F2722A918000AA82F /* DateConvert.swift in Sources */,
+				20A9CA40272C7B190035305E /* Global.swift in Sources */,
 				20E5296A2722003500B38F91 /* VKApi.swift in Sources */,
 				20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */,
 				20120AEE272B2F3B00BC150A /* InteractiveLinkLabel.swift in Sources */,
 				2092700727170A9B00B9B78D /* SceneDelegate.swift in Sources */,
-				202B171D271E270A002C5AA2 /* MethodSecureCheckToken.swift in Sources */,
-				20927019271747EE00B9B78D /* MethodUsersGet.swift in Sources */,
+				202B171D271E270A002C5AA2 /* ModelSecureCheckToken.swift in Sources */,
+				20927019271747EE00B9B78D /* ModelUsersGet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

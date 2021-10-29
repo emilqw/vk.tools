@@ -5,12 +5,12 @@
 //  Created by Эмиль Яйлаев on 19.10.2021.
 //
 
-struct MethodError:Decodable{
+struct ModelError:Decodable{
     var error_code:Int?
     var error_msg:String?
-    var request_params:[requestParamsResponse]?
+    var request_params:[ResponseRequestParams]?
 }
-struct requestParamsResponse:Decodable{
+internal struct ResponseRequestParams:Decodable{
     var key: String
     var value:String
 }

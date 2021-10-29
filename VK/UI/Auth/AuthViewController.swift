@@ -29,7 +29,7 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
                     }
                     guard let data = data else { return }
                     do {
-                        let methodAuth = try JSONDecoder().decode(MethodAuth.self, from: data)
+                        let methodAuth = try JSONDecoder().decode(ModelAuth.self, from: data)
                         if methodAuth.error == nil {
                             DispatchQueue.main.async {
                                 let defaults = UserDefaults.standard

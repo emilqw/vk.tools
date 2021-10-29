@@ -59,7 +59,7 @@ class UsersMethod {
      - parameter completion: Токен пользователя.
      - returns: void
      */
-    static func get(accessToken:String,userIds:String? = nil,fields:String? = nil,nameCase:String? = nil,v:String? = nil,completion: @escaping (MethodUsersGet?)->()){
+    static func get(accessToken:String,userIds:String? = nil,fields:String? = nil,nameCase:String? = nil,v:String? = nil,completion: @escaping (ModelUsersGet?)->()){
         var queryItems:[URLQueryItem] = Array()
         (userIds != nil) ? queryItems.append(URLQueryItem(name: "user_ids", value: userIds ?? "")):()
         queryItems.append(URLQueryItem(name: "fields", value: fields ?? ""))
@@ -74,7 +74,7 @@ class UsersMethod {
             }
             guard let data = data else { return }
             do {
-                let user = try JSONDecoder().decode(MethodUsersGet.self, from: data)
+                let user = try JSONDecoder().decode(ModelUsersGet.self, from: data)
                 completion(user)
             } catch {
                 completion(nil)
@@ -82,9 +82,14 @@ class UsersMethod {
         }.resume()
     }
 }
+class FriendsMethod{
+    static func get(accessToken:String,userId:String? = nil,fields:String? = nil,order:String? = nil,listId:Int? = nil,count:Int? = nil,offset:Int? = nil,nameCase:String? = nil,ref:String? = nil,v:String? = nil,completion: @escaping (ModelUtilsResolveScreenName?)->()){
+        
+    }
+}
 /// Служебные методы API.
 class Utils {
-    static func resolveScreenName(accessToken:String,screenName:String,v:String? = nil,completion: @escaping (MethodUtilsResolveScreenName?)->()){
+    static func resolveScreenName(accessToken:String,screenName:String,v:String? = nil,completion: @escaping (ModelUtilsResolveScreenName?)->()){
         var queryItems:[URLQueryItem] = Array()
         queryItems.append(URLQueryItem(name: "screen_name", value: screenName))
         queryItems.append(URLQueryItem(name: "access_token", value: accessToken))
@@ -99,7 +104,7 @@ class Utils {
             }
             guard let data = data else { return }
             do {
-                let page = try JSONDecoder().decode(MethodUtilsResolveScreenName.self, from: data)
+                let page = try JSONDecoder().decode(ModelUtilsResolveScreenName.self, from: data)
                 completion(page)
             } catch {
                 completion(nil)
