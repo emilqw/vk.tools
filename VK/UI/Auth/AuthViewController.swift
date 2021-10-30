@@ -20,6 +20,7 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let urlStr = navigationAction.request.url?.absoluteString {
+            print("url: "+urlStr)
             let urlParser = URLParser(url: urlStr)
             if let code = urlParser.checkHashByName(name: "code"){
                 URLSession.shared.dataTask(with: URL(string:Data.urls.accessTokenUrl(code: code))!){data, response, error in
@@ -50,8 +51,12 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
                         }
                     }
                 }.resume()
-            }
-            else{
+            }else{
+                if urlParser.checkHashByName(name: "error") != nil{
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
                 decisionHandler(.allow)
             }
         }

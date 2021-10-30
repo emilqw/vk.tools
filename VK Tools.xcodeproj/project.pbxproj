@@ -119,7 +119,6 @@
 		202B1716271E0CC4002C5AA2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				20B3B7F1272724D60080341C /* Auth.storyboard */,
 				2092700A27170A9B00B9B78D /* Main.storyboard */,
 				208BF43E2718866B00F07B6F /* MainViewController.swift */,
 			);
@@ -227,6 +226,7 @@
 		20B3B7F3272726760080341C /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				20B3B7F1272724D60080341C /* Auth.storyboard */,
 				2092700827170A9B00B9B78D /* LoginViewController.swift */,
 				204DF19627183AC6005D8C1B /* AuthViewController.swift */,
 			);

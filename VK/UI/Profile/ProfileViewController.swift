@@ -34,8 +34,8 @@ class ProfileViewController: UIViewController {
         }
     }
     @IBAction func onLogout(_ sender: Any) {
-        let alert = UIAlertController(title: "Выйти", message: "Вы уверен, что хотите выйти?", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Да", style: .default) { sender in
+        let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .actionSheet)
+        let okButton = UIAlertAction(title: "Да", style: .destructive) { sender in
             self.clearAllDataWKWebsite()
             let defaults = UserDefaults.standard
             defaults.set("", forKey: Data.keys.tokenVK)
@@ -43,10 +43,9 @@ class ProfileViewController: UIViewController {
             let newViewController =  storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
             self.present(newViewController, animated: true, completion: nil)
         }
-        let cancelButton = UIAlertAction(title: "Нет", style: .default) { sender in
-        }
-        alert.addAction(okButton)
+        let cancelButton = UIAlertAction(title: "Нет", style: .cancel)
         alert.addAction(cancelButton)
+        alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
     }
     
