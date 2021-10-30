@@ -37,8 +37,9 @@ class VK {
                     isoDate = String(isoDate[range1])
                     if let range2 = isoDate.range(of: "\".*\"", options: .regularExpression){
                         isoDate = String(isoDate[range2])
+                        let dateFormatter = DateFormatter()
                         completion(
-                            DateConvert.editFormat(date: isoDate, dateFormat: "\"yyyy-MM-dd'T'HH:mm:ssZ\"", localeIdentifier: "en_US_POSIX", dateFormatOutput: "dd MMMM YYYY в HH:mm:ss", localeIdentifierOutput: "ru_RU")
+                            dateFormatter.toString(dateValue: isoDate, dateFormat: "\"yyyy-MM-dd'T'HH:mm:ssZ\"", localeIdentifier: "en_US_POSIX", dateFormatOutput: "dd MMMM YYYY в HH:mm:ss", localeIdentifierOutput: "ru_RU")
                         )
                     } else {
                         completion(nil)

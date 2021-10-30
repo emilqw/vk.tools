@@ -33,6 +33,23 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    @IBAction func onLogout(_ sender: Any) {
+        let alert = UIAlertController(title: "Выйти", message: "Вы уверен, что хотите выйти?", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Да", style: .default) { sender in
+            self.clearAllDataWKWebsite()
+            let defaults = UserDefaults.standard
+            defaults.set("", forKey: Data.keys.tokenVK)
+            let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController =  storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
+            self.present(newViewController, animated: true, completion: nil)
+        }
+        let cancelButton = UIAlertAction(title: "Нет", style: .default) { sender in
+        }
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true, completion: nil)
+    }
+    
     func clearAllDataWKWebsite(){
         URLCache.shared.removeAllCachedResponses()
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
@@ -42,15 +59,6 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    @IBAction func onLogout(_ sender: Any) {
-        clearAllDataWKWebsite()
-        let defaults = UserDefaults.standard
-        defaults.set("", forKey: Data.keys.tokenVK)
-        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController =  storyBoard.instantiateViewController(withIdentifier: "main") as! MainViewController
-        present(newViewController, animated: true, completion: nil)
-    }
-    
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
         let imageView = sender.view as! UIImageView
         let newImageView = UIImageView(image: imageView.image)

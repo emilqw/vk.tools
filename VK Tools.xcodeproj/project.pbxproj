@@ -21,6 +21,7 @@
 		208BF43B271870EE00F07B6F /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF43A271870EE00F07B6F /* URLParser.swift */; };
 		208BF43F2718866B00F07B6F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF43E2718866B00F07B6F /* MainViewController.swift */; };
 		208BF4412718C4DE00F07B6F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF4402718C4DE00F07B6F /* ProfileViewController.swift */; };
+		208D6757272D3E1400B74166 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D6756272D3E1400B74166 /* DateFormatter.swift */; };
 		2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092700427170A9B00B9B78D /* AppDelegate.swift */; };
 		2092700727170A9B00B9B78D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092700627170A9B00B9B78D /* SceneDelegate.swift */; };
 		2092700927170A9B00B9B78D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092700827170A9B00B9B78D /* LoginViewController.swift */; };
@@ -39,7 +40,6 @@
 		20B3B7F62727272A0080341C /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7F52727272A0080341C /* App.storyboard */; };
 		20B3B7F9272727D30080341C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7F8272727D30080341C /* Profile.storyboard */; };
 		20B3B7FC272728BC0080341C /* Functions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7FB272728BC0080341C /* Functions.storyboard */; };
-		20B46E0F2722A918000AA82F /* DateConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E0E2722A918000AA82F /* DateConvert.swift */; };
 		20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */; };
 		20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E1227231204000AA82F /* PageIdViewController.swift */; };
 		20E5296A2722003500B38F91 /* VK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E529692722003500B38F91 /* VK.swift */; };
@@ -60,6 +60,7 @@
 		208BF43A271870EE00F07B6F /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
 		208BF43E2718866B00F07B6F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		208BF4402718C4DE00F07B6F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		208D6756272D3E1400B74166 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		2092700127170A9B00B9B78D /* VK Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092700427170A9B00B9B78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2092700627170A9B00B9B78D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		20B3B7F52727272A0080341C /* App.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = App.storyboard; sourceTree = "<group>"; };
 		20B3B7F8272727D30080341C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		20B3B7FB272728BC0080341C /* Functions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Functions.storyboard; sourceTree = "<group>"; };
-		20B46E0E2722A918000AA82F /* DateConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConvert.swift; sourceTree = "<group>"; };
 		20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtilsResolveScreenName.swift; sourceTree = "<group>"; };
 		20B46E1227231204000AA82F /* PageIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdViewController.swift; sourceTree = "<group>"; };
 		20E529692722003500B38F91 /* VK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK.swift; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				20120AEB272B23F300BC150A /* String.swift */,
+				208D6756272D3E1400B74166 /* DateFormatter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -265,8 +266,8 @@
 				202B1716271E0CC4002C5AA2 /* Main */,
 				20B3B7F3272726760080341C /* Auth */,
 				20B3B7F4272727140080341C /* App */,
-				20B3B7FA272728AE0080341C /* Functions */,
 				20B3B7F7272727C40080341C /* Profile */,
+				20B3B7FA272728AE0080341C /* Functions */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -286,7 +287,6 @@
 			children = (
 				20120AE8272ACDD200BC150A /* CustomUI */,
 				2023BAC82729FB370038A780 /* Extension */,
-				20B46E0E2722A918000AA82F /* DateConvert.swift */,
 				208BF43A271870EE00F07B6F /* URLParser.swift */,
 			);
 			path = Core;
@@ -413,11 +413,11 @@
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
 				202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */,
 				208BF4412718C4DE00F07B6F /* ProfileViewController.swift in Sources */,
-				20B46E0F2722A918000AA82F /* DateConvert.swift in Sources */,
 				20A9CA40272C7B190035305E /* Global.swift in Sources */,
 				20E5296A2722003500B38F91 /* VK.swift in Sources */,
 				20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */,
 				20120AEE272B2F3B00BC150A /* InteractiveLinkLabel.swift in Sources */,
+				208D6757272D3E1400B74166 /* DateFormatter.swift in Sources */,
 				20A9CA48272C8CA60035305E /* ServiceFriends.swift in Sources */,
 				20A9CA46272C8C7C0035305E /* ServiceUsers.swift in Sources */,
 				2092700727170A9B00B9B78D /* SceneDelegate.swift in Sources */,
