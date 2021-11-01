@@ -78,5 +78,3 @@ class ProfileViewController: UIViewController {
         sender.view?.removeFromSuperview()
     }
 }
-
-
