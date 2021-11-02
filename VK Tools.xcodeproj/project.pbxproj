@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2008A8262731792F004D4CC4 /* ShowFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */; };
+		2008A828273179FA004D4CC4 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A827273179FA004D4CC4 /* CityTableViewCell.swift */; };
+		2008A82B273183E7004D4CC4 /* ModelCitiesFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */; };
 		20120AEA272AFA0B00BC150A /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AE9272AFA0B00BC150A /* Label.swift */; };
 		20120AEC272B23F300BC150A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AEB272B23F300BC150A /* String.swift */; };
 		20120AEE272B2F3B00BC150A /* InteractiveLinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AED272B2F3B00BC150A /* InteractiveLinkLabel.swift */; };
@@ -43,11 +46,14 @@
 		20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */; };
 		20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E1227231204000AA82F /* PageIdViewController.swift */; };
 		20DF266627306E5C00D2B434 /* FriendsCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */; };
-		20DF2668273071E500D2B434 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF2667273071E500D2B434 /* FriendTableViewCell.swift */; };
+		20DF2668273071E500D2B434 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF2667273071E500D2B434 /* UserTableViewCell.swift */; };
 		20E5296A2722003500B38F91 /* VK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E529692722003500B38F91 /* VK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFriendsViewController.swift; sourceTree = "<group>"; };
+		2008A827273179FA004D4CC4 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCitiesFriends.swift; sourceTree = "<group>"; };
 		20120AE9272AFA0B00BC150A /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		20120AEB272B23F300BC150A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		20120AED272B2F3B00BC150A /* InteractiveLinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveLinkLabel.swift; sourceTree = "<group>"; };
@@ -86,7 +92,7 @@
 		20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtilsResolveScreenName.swift; sourceTree = "<group>"; };
 		20B46E1227231204000AA82F /* PageIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdViewController.swift; sourceTree = "<group>"; };
 		20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCitiesViewController.swift; sourceTree = "<group>"; };
-		20DF2667273071E500D2B434 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		20DF2667273071E500D2B434 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		20E529692722003500B38F91 /* VK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2008A82927318326004D4CC4 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
 		20120AE8272ACDD200BC150A /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +275,9 @@
 				2066C4B02721F25200464C18 /* RegDateViewController.swift */,
 				20B46E1227231204000AA82F /* PageIdViewController.swift */,
 				20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */,
-				20DF2667273071E500D2B434 /* FriendTableViewCell.swift */,
+				20DF2667273071E500D2B434 /* UserTableViewCell.swift */,
+				2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */,
+				2008A827273179FA004D4CC4 /* CityTableViewCell.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -301,6 +317,7 @@
 		20ECA7362725D10A007DB8F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2008A82927318326004D4CC4 /* Cities */,
 				20A9CA3E272C7B020035305E /* Global */,
 				20A9CA3A272C77A00035305E /* Auth */,
 				20A9CA39272C77590035305E /* Utils */,
@@ -405,8 +422,10 @@
 				20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */,
 				208BF43F2718866B00F07B6F /* MainViewController.swift in Sources */,
 				20A9CA4A272C8CCA0035305E /* ServiceUtils.swift in Sources */,
+				2008A8262731792F004D4CC4 /* ShowFriendsViewController.swift in Sources */,
 				20147B332728070D00DE4462 /* Fields.swift in Sources */,
 				20A9CA3D272C78180035305E /* ModelFriendsGet.swift in Sources */,
+				2008A82B273183E7004D4CC4 /* ModelCitiesFriends.swift in Sources */,
 				20A9CA4C272CAA240035305E /* Methods.swift in Sources */,
 				20120AEA272AFA0B00BC150A /* Label.swift in Sources */,
 				204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */,
@@ -414,12 +433,13 @@
 				2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */,
 				2023BAC72729D6690038A780 /* ImageView.swift in Sources */,
 				202B171B271E236B002C5AA2 /* ModelAuth.swift in Sources */,
-				20DF2668273071E500D2B434 /* FriendTableViewCell.swift in Sources */,
+				20DF2668273071E500D2B434 /* UserTableViewCell.swift in Sources */,
 				2092700927170A9B00B9B78D /* LoginViewController.swift in Sources */,
 				20A9CA4E272CAB320035305E /* ServiceAuth.swift in Sources */,
 				20120AEC272B23F300BC150A /* String.swift in Sources */,
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
 				202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */,
+				2008A828273179FA004D4CC4 /* CityTableViewCell.swift in Sources */,
 				208BF4412718C4DE00F07B6F /* ProfileViewController.swift in Sources */,
 				20A9CA40272C7B190035305E /* Global.swift in Sources */,
 				20E5296A2722003500B38F91 /* VK.swift in Sources */,

@@ -35,4 +35,31 @@ class ServiceFriends{
             }
         }.resume()
     }
+    static func toCitiesState(friends:ResponseFriendsGet)->ModelCitiesFriends{
+        var dictionaryCities:[String:[ResponseItemFriendsGet]] = [:]
+        var responseCitiesFriends:[ResponseCitiesFriends] = []
+        var notIndicated:[ResponseItemFriendsGet] = []
+        for friend in friends.items {
+            if let city = friend.city {
+                if var array = dictionaryCities[city.title!] {
+                    array.append(friend)
+                    dictionaryCities[city.title!]  = array
+                }
+                else {
+                    var array:[ResponseItemFriendsGet] = []
+                    array.append(friend)
+                    dictionaryCities[city.title!]  = array
+                }
+            } else {
+                notIndicated.append(friend)
+            }
+        }
+        for key in Array(dictionaryCities.keys){
+            responseCitiesFriends.append(ResponseCitiesFriends(cityTitle: key, value: Float((Float(dictionaryCities[key]!.count)*Float(100)/Float(friends.count))), friends: dictionaryCities[key]!))
+        }
+        responseCitiesFriends = responseCitiesFriends.sorted{ $0.value > $1.value}
+        responseCitiesFriends.append(ResponseCitiesFriends(cityTitle: "Не указано", value: Float((Float(notIndicated.count)*Float(100)/Float(friends.count))), friends: notIndicated))
+        let citiesFriends:ModelCitiesFriends = ModelCitiesFriends(response: responseCitiesFriends)
+        return citiesFriends
+    }
 }

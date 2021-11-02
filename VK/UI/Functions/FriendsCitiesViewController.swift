@@ -8,7 +8,7 @@
 import UIKit
 
 class FriendsCitiesViewController: UIViewController {
-    var friends:[ResponseItemFriendsGet] = []
+    var cities:[ResponseCitiesFriends] = []
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class FriendsCitiesViewController: UIViewController {
             VK.friends.get(accessToken: accessToken, fields: Fields.create(.domain,.city,.photo_200_orig)){friends in
                 if let friends = friends {
                     DispatchQueue.main.async {
-                        self.friends = friends.response!.items
+                        self.cities = VK.friends.toCitiesState(friends:friends.response!).response
                         self.tableView.reloadData()
                     }
                 }
@@ -35,12 +35,22 @@ class FriendsCitiesViewController: UIViewController {
 }
 extension FriendsCitiesViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return cities.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let friend = friends[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendViewCell") as! FriendTableViewCell
-        cell.setFriend(friend: friend)
+        let city = cities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell") as! CityTableViewCell
+        cell.setCity(cityTitle: city.cityTitle, value: city.value)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showCityFriends", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ShowFriendsViewController {
+            let i:Int = Int(tableView.indexPathForSelectedRow!.row)
+            destination.navigation.title = cities[i].cityTitle
+            destination.friends = cities[i].friends
+        }
     }
 }

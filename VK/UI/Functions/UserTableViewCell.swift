@@ -7,22 +7,23 @@
 
 import UIKit
 
-class FriendTableViewCell: UITableViewCell {
+class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var userImageView: CustomImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    func setFriend(friend:ResponseItemFriendsGet){
-        userImageView.download(from: friend.photo_200_orig!)
-        fullNameLabel.text = friend.last_name! + " " + friend.first_name!
-        if let city = friend.city{
-            cityLabel.text = city.title
+    func setUser(imageUrl:String,fullName:String,info:String?){
+        userImageView.download(from: imageUrl)
+        fullNameLabel.text = fullName
+        if let info = info {
+            infoLabel.isHidden = false
+            infoLabel.text = info
         }
         else {
-            cityLabel.text  = ""
+            infoLabel.isHidden = true
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
