@@ -54,6 +54,7 @@ class RegDateViewController:UIViewController {
                                     }
                                 }
                             }
+                            
                         } else {
                             DispatchQueue.main.async {
                                 self.activityIndicator.isHidden = true

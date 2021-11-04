@@ -15,6 +15,7 @@ struct Methods {
     
     struct friends {
         static let get = "friends.get"
+        static let getMutual = "friends.getMutual"
     }
     
     struct secure {

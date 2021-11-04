@@ -35,6 +35,32 @@ class ServiceFriends{
             }
         }.resume()
     }
+    static func getMutual(accessToken:String,sourceUid:String? = nil,targetUid:String? = nil,targetUids:String? = nil,order:String? = nil,count:Int? = nil,offset:Int? = nil,v:String? = nil,completion: @escaping (ModelFriendsGetManual?)->()){
+        var queryItems:[URLQueryItem] = Array()
+        (sourceUid != nil) ? queryItems.append(URLQueryItem(name: "source_uid", value: sourceUid ?? "")):()
+        queryItems.append(URLQueryItem(name: "target_uid", value: targetUid ?? ""))
+        (targetUids != nil) ? queryItems.append(URLQueryItem(name: "target_uids", value: targetUids ?? "")):()
+        (order != nil) ? queryItems.append(URLQueryItem(name: "order", value: order ?? "")):()
+        (count != nil) ? queryItems.append(URLQueryItem(name: "count", value: String(describing:count))):()
+        (offset != nil) ? queryItems.append(URLQueryItem(name: "offset", value: String(describing:offset))):()
+        queryItems.append(URLQueryItem(name: "access_token", value: accessToken))
+        queryItems.append(URLQueryItem(name: "v", value: v ?? Data.appConfig.version))
+        let usersGetUrl = URLCreate(method: Methods.friends.getMutual, queryItems: queryItems)
+        guard let url = usersGetUrl.getUrl() else { return }
+        print(url)
+        URLSession.shared.dataTask(with: url){data, response, error in
+            if let error = error{print(error)
+                return
+            }
+            guard let data = data else { return }
+            do {
+                let friends = try JSONDecoder().decode(ModelFriendsGetManual.self, from: data)
+                completion(friends)
+            } catch {
+                completion(nil)
+            }
+        }.resume()
+    }
     static func toCitiesState(friends:ResponseFriendsGet)->ModelCitiesFriends{
         var dictionaryCities:[String:[ResponseItemFriendsGet]] = [:]
         var responseCitiesFriends:[ResponseCitiesFriends] = []

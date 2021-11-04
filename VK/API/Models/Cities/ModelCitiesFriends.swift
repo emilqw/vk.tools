@@ -9,6 +9,7 @@ import Foundation
 
 struct ModelCitiesFriends {
     var response:[ResponseCitiesFriends]
+    var error:ModelError?
 }
 struct ResponseCitiesFriends {
     var cityTitle:String

@@ -19,6 +19,12 @@
 		202B171D271E270A002C5AA2 /* ModelSecureCheckToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171C271E270A002C5AA2 /* ModelSecureCheckToken.swift */; };
 		202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171E271E27A5002C5AA2 /* ModelError.swift */; };
 		204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF19627183AC6005D8C1B /* AuthViewController.swift */; };
+		2057AE972734833100950EF8 /* CommonFriendsGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE962734833100950EF8 /* CommonFriendsGroupsViewController.swift */; };
+		2057AE9A273483F200950EF8 /* CommonGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE99273483F200950EF8 /* CommonGroupsViewController.swift */; };
+		2057AE9C2734840300950EF8 /* CommonFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE9B2734840300950EF8 /* CommonFriendsViewController.swift */; };
+		2057AE9F2734852400950EF8 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */; };
+		2057AEA12734894200950EF8 /* ModelFriendsGetManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AEA02734894200950EF8 /* ModelFriendsGetManual.swift */; };
+		2057AEA427348D4200950EF8 /* Fave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2057AEA327348D4200950EF8 /* Fave.storyboard */; };
 		2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2066C4B02721F25200464C18 /* RegDateViewController.swift */; };
 		208BF4392718613000F07B6F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF4382718613000F07B6F /* Data.swift */; };
 		208BF43B271870EE00F07B6F /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF43A271870EE00F07B6F /* URLParser.swift */; };
@@ -63,6 +69,12 @@
 		202B171C271E270A002C5AA2 /* ModelSecureCheckToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSecureCheckToken.swift; sourceTree = "<group>"; };
 		202B171E271E27A5002C5AA2 /* ModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelError.swift; sourceTree = "<group>"; };
 		204DF19627183AC6005D8C1B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		2057AE962734833100950EF8 /* CommonFriendsGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFriendsGroupsViewController.swift; sourceTree = "<group>"; };
+		2057AE99273483F200950EF8 /* CommonGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonGroupsViewController.swift; sourceTree = "<group>"; };
+		2057AE9B2734840300950EF8 /* CommonFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFriendsViewController.swift; sourceTree = "<group>"; };
+		2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		2057AEA02734894200950EF8 /* ModelFriendsGetManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFriendsGetManual.swift; sourceTree = "<group>"; };
+		2057AEA327348D4200950EF8 /* Fave.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fave.storyboard; sourceTree = "<group>"; };
 		2066C4B02721F25200464C18 /* RegDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegDateViewController.swift; sourceTree = "<group>"; };
 		208BF4382718613000F07B6F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		208BF43A271870EE00F07B6F /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
@@ -152,6 +164,43 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		2057AE942734829100950EF8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				20DF2667273071E500D2B434 /* UserTableViewCell.swift */,
+				2008A827273179FA004D4CC4 /* CityTableViewCell.swift */,
+				2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2057AE95273482B900950EF8 /* FriendsCities */ = {
+			isa = PBXGroup;
+			children = (
+				20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */,
+				2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */,
+			);
+			path = FriendsCities;
+			sourceTree = "<group>";
+		};
+		2057AE98273483C900950EF8 /* CommonFriendsGroups */ = {
+			isa = PBXGroup;
+			children = (
+				2057AE962734833100950EF8 /* CommonFriendsGroupsViewController.swift */,
+				2057AE99273483F200950EF8 /* CommonGroupsViewController.swift */,
+				2057AE9B2734840300950EF8 /* CommonFriendsViewController.swift */,
+			);
+			path = CommonFriendsGroups;
+			sourceTree = "<group>";
+		};
+		2057AEA227348D0700950EF8 /* Fave */ = {
+			isa = PBXGroup;
+			children = (
+				2057AEA327348D4200950EF8 /* Fave.storyboard */,
+			);
+			path = Fave;
+			sourceTree = "<group>";
+		};
 		208BF43D271885A100F07B6F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				20A9CA3C272C78180035305E /* ModelFriendsGet.swift */,
+				2057AEA02734894200950EF8 /* ModelFriendsGetManual.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -271,13 +321,12 @@
 		20B3B7FA272728AE0080341C /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				2057AE98273483C900950EF8 /* CommonFriendsGroups */,
 				20B3B7FB272728BC0080341C /* Functions.storyboard */,
+				2057AE942734829100950EF8 /* TableViewCell */,
 				2066C4B02721F25200464C18 /* RegDateViewController.swift */,
 				20B46E1227231204000AA82F /* PageIdViewController.swift */,
-				20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */,
-				20DF2667273071E500D2B434 /* UserTableViewCell.swift */,
-				2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */,
-				2008A827273179FA004D4CC4 /* CityTableViewCell.swift */,
+				2057AE95273482B900950EF8 /* FriendsCities */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -290,6 +339,7 @@
 				20B3B7F4272727140080341C /* App */,
 				20B3B7F7272727C40080341C /* Profile */,
 				20B3B7FA272728AE0080341C /* Functions */,
+				2057AEA227348D0700950EF8 /* Fave */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -332,8 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				20E529692722003500B38F91 /* VK.swift */,
-				20A9CA45272C8C7C0035305E /* ServiceUsers.swift */,
 				20A9CA47272C8CA60035305E /* ServiceFriends.swift */,
+				20A9CA45272C8C7C0035305E /* ServiceUsers.swift */,
 				20A9CA49272C8CCA0035305E /* ServiceUtils.swift */,
 				20A9CA4D272CAB320035305E /* ServiceAuth.swift */,
 			);
@@ -400,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2057AEA427348D4200950EF8 /* Fave.storyboard in Resources */,
 				20B3B7F9272727D30080341C /* Profile.storyboard in Resources */,
 				2092701127170A9C00B9B78D /* LaunchScreen.storyboard in Resources */,
 				20B3B7FC272728BC0080341C /* Functions.storyboard in Resources */,
@@ -420,6 +471,7 @@
 				208BF43B271870EE00F07B6F /* URLParser.swift in Sources */,
 				20DF266627306E5C00D2B434 /* FriendsCitiesViewController.swift in Sources */,
 				20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */,
+				2057AE972734833100950EF8 /* CommonFriendsGroupsViewController.swift in Sources */,
 				208BF43F2718866B00F07B6F /* MainViewController.swift in Sources */,
 				20A9CA4A272C8CCA0035305E /* ServiceUtils.swift in Sources */,
 				2008A8262731792F004D4CC4 /* ShowFriendsViewController.swift in Sources */,
@@ -429,6 +481,7 @@
 				20A9CA4C272CAA240035305E /* Methods.swift in Sources */,
 				20120AEA272AFA0B00BC150A /* Label.swift in Sources */,
 				204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */,
+				2057AE9F2734852400950EF8 /* GroupTableViewCell.swift in Sources */,
 				208BF4392718613000F07B6F /* Data.swift in Sources */,
 				2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */,
 				2023BAC72729D6690038A780 /* ImageView.swift in Sources */,
@@ -436,7 +489,9 @@
 				20DF2668273071E500D2B434 /* UserTableViewCell.swift in Sources */,
 				2092700927170A9B00B9B78D /* LoginViewController.swift in Sources */,
 				20A9CA4E272CAB320035305E /* ServiceAuth.swift in Sources */,
+				2057AE9C2734840300950EF8 /* CommonFriendsViewController.swift in Sources */,
 				20120AEC272B23F300BC150A /* String.swift in Sources */,
+				2057AEA12734894200950EF8 /* ModelFriendsGetManual.swift in Sources */,
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
 				202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */,
 				2008A828273179FA004D4CC4 /* CityTableViewCell.swift in Sources */,
@@ -446,6 +501,7 @@
 				20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */,
 				20120AEE272B2F3B00BC150A /* InteractiveLinkLabel.swift in Sources */,
 				208D6757272D3E1400B74166 /* DateFormatter.swift in Sources */,
+				2057AE9A273483F200950EF8 /* CommonGroupsViewController.swift in Sources */,
 				20A9CA48272C8CA60035305E /* ServiceFriends.swift in Sources */,
 				20A9CA46272C8C7C0035305E /* ServiceUsers.swift in Sources */,
 				2092700727170A9B00B9B78D /* SceneDelegate.swift in Sources */,
