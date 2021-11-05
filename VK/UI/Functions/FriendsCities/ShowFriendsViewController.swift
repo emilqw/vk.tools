@@ -29,4 +29,14 @@ extension ShowFriendsViewController: UITableViewDataSource,UITableViewDelegate {
         cell.setUser(imageUrl: friend.photo_200_orig!, fullName: friend.last_name! + " " + friend.first_name!, info: friend.city?.title)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showUser", sender: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UserViewController {
+            let i:Int = Int(tableView.indexPathForSelectedRow!.row)
+            destination.setUser(userId: friends[i].id)
+        }
+    }
 }

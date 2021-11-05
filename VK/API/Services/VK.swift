@@ -14,6 +14,8 @@ class VK {
     static let auth = ServiceAuth.self
     /// Методы для работы с данными пользователей.
     static let users = ServiceUsers.self
+    /// Методы для работы с закладками.
+    static let fave = ServiceFave.self
     /// Методы для работы с друзьями
     static let friends = ServiceFriends.self
     /// Служебные методы.

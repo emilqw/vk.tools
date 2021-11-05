@@ -102,6 +102,7 @@ class FriendsCitiesViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
 extension FriendsCitiesViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count

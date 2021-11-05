@@ -12,7 +12,9 @@ struct Methods {
     struct users {
         static let get = "users.get"
     }
-    
+    struct fave {
+        static let getPages = "fave.getPages"
+    }
     struct friends {
         static let get = "friends.get"
         static let getMutual = "friends.getMutual"

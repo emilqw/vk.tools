@@ -12,18 +12,20 @@ class PageIdViewController:UIViewController {
     @IBOutlet weak var pageIdLabel: UILabel!
     @IBOutlet weak var linkLabel: InteractiveLinkLabel!
     @IBOutlet weak var pageIdTextField: UITextField!
+    var pageIdText:String = ""
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
     @IBAction func onMyId(_ sender: UIButton) {
         pageIdLabel.text = ""
         activityIndicator.isHidden = false
         viewPageId()
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        pageIdTextField.text = pageIdText
+        if pageIdText != "" {
+            activityIndicator.isHidden = false
+            viewPageId(pageIdText)
+        }
     }
     @IBAction func onPageId(_ sender: UIButton) {
         pageIdLabel.text = ""

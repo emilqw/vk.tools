@@ -104,7 +104,7 @@
         <!--Узнать ID страницы-->
         <scene sceneID="cL4-Hd-DfJ">
             <objects>
-                <viewController id="Yme-gy-3Lz" customClass="PageIdViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageId" id="Yme-gy-3Lz" customClass="PageIdViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Srd-DI-FHR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +212,7 @@
         <!--Дата регистрации-->
         <scene sceneID="QNz-Eg-m7F">
             <objects>
-                <viewController id="t0j-bT-BEI" customClass="RegDateViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegDate" id="t0j-bT-BEI" customClass="RegDateViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NCQ-8v-xaF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -690,6 +690,16 @@
             </objects>
             <point key="canvasLocation" x="942" y="1140"/>
         </scene>
+        <!--User-->
+        <scene sceneID="5kV-BT-Tmc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="csh-5Z-hcb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="v4C-lZ-gzg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5e-Tx-k6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="1606"/>
+        </scene>
         <!--Show Friends View Controller-->
         <scene sceneID="fQz-Yk-AaT">
             <objects>
@@ -774,6 +784,7 @@
                     <connections>
                         <outlet property="navigation" destination="i4Y-hH-i8N" id="Fbk-Yo-9eN"/>
                         <outlet property="tableView" destination="K6O-Ee-VGe" id="DH7-3d-ztz"/>
+                        <segue destination="csh-5Z-hcb" kind="show" identifier="showUser" id="bb6-I5-iGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3u-27-IK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

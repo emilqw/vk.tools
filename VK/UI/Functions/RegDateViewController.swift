@@ -9,10 +9,16 @@ import UIKit
 
 class RegDateViewController:UIViewController {
     @IBOutlet weak var userIdTextField: UITextField!
+    var userIdText: String = ""
     @IBOutlet weak var regDateLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userIdTextField.text = userIdText
+        if userIdText != "" {
+            activityIndicator.isHidden = false
+            viewRegDate(userIdText)
+        }
     }
     @IBAction func onMyRegDate(_ sender: UIButton) {
         regDateLabel.text = ""

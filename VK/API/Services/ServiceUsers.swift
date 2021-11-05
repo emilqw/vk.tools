@@ -33,8 +33,8 @@ class ServiceUsers {
             }
             guard let data = data else { return }
             do {
-                let user = try JSONDecoder().decode(ModelUsersGet.self, from: data)
-                completion(user)
+                let users = try JSONDecoder().decode(ModelUsersGet.self, from: data)
+                completion(users)
             } catch {
                 completion(nil)
             }

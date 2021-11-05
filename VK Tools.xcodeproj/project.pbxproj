@@ -25,7 +25,12 @@
 		2057AE9F2734852400950EF8 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */; };
 		2057AEA12734894200950EF8 /* ModelFriendsGetManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AEA02734894200950EF8 /* ModelFriendsGetManual.swift */; };
 		2057AEA427348D4200950EF8 /* Fave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2057AEA327348D4200950EF8 /* Fave.storyboard */; };
+		2057AEA6273490F400950EF8 /* FaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AEA5273490F400950EF8 /* FaveViewController.swift */; };
+		2057AEA82734911300950EF8 /* ServiceFave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AEA72734911300950EF8 /* ServiceFave.swift */; };
+		2057AEAB2734915500950EF8 /* ModelFave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AEAA2734915500950EF8 /* ModelFave.swift */; };
 		2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2066C4B02721F25200464C18 /* RegDateViewController.swift */; };
+		206B1A1A2735D61B00549639 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 206B1A192735D61B00549639 /* User.storyboard */; };
+		206B1A1C2735D65B00549639 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B1A1B2735D65B00549639 /* UserViewController.swift */; };
 		208BF4392718613000F07B6F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF4382718613000F07B6F /* Data.swift */; };
 		208BF43B271870EE00F07B6F /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF43A271870EE00F07B6F /* URLParser.swift */; };
 		208BF43F2718866B00F07B6F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BF43E2718866B00F07B6F /* MainViewController.swift */; };
@@ -51,6 +56,7 @@
 		20B3B7FC272728BC0080341C /* Functions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7FB272728BC0080341C /* Functions.storyboard */; };
 		20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */; };
 		20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E1227231204000AA82F /* PageIdViewController.swift */; };
+		20D9EC7827353B9600F9FE32 /* FaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9EC7727353B9600F9FE32 /* FaveTableViewCell.swift */; };
 		20DF266627306E5C00D2B434 /* FriendsCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */; };
 		20DF2668273071E500D2B434 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF2667273071E500D2B434 /* UserTableViewCell.swift */; };
 		20E5296A2722003500B38F91 /* VK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E529692722003500B38F91 /* VK.swift */; };
@@ -75,7 +81,12 @@
 		2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		2057AEA02734894200950EF8 /* ModelFriendsGetManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFriendsGetManual.swift; sourceTree = "<group>"; };
 		2057AEA327348D4200950EF8 /* Fave.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fave.storyboard; sourceTree = "<group>"; };
+		2057AEA5273490F400950EF8 /* FaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveViewController.swift; sourceTree = "<group>"; };
+		2057AEA72734911300950EF8 /* ServiceFave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFave.swift; sourceTree = "<group>"; };
+		2057AEAA2734915500950EF8 /* ModelFave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFave.swift; sourceTree = "<group>"; };
 		2066C4B02721F25200464C18 /* RegDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegDateViewController.swift; sourceTree = "<group>"; };
+		206B1A192735D61B00549639 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		206B1A1B2735D65B00549639 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		208BF4382718613000F07B6F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		208BF43A271870EE00F07B6F /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
 		208BF43E2718866B00F07B6F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +114,7 @@
 		20B3B7FB272728BC0080341C /* Functions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Functions.storyboard; sourceTree = "<group>"; };
 		20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtilsResolveScreenName.swift; sourceTree = "<group>"; };
 		20B46E1227231204000AA82F /* PageIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdViewController.swift; sourceTree = "<group>"; };
+		20D9EC7727353B9600F9FE32 /* FaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveTableViewCell.swift; sourceTree = "<group>"; };
 		20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCitiesViewController.swift; sourceTree = "<group>"; };
 		20DF2667273071E500D2B434 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		20E529692722003500B38F91 /* VK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK.swift; sourceTree = "<group>"; };
@@ -170,6 +182,7 @@
 				20DF2667273071E500D2B434 /* UserTableViewCell.swift */,
 				2008A827273179FA004D4CC4 /* CityTableViewCell.swift */,
 				2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */,
+				20D9EC7727353B9600F9FE32 /* FaveTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -197,8 +210,26 @@
 			isa = PBXGroup;
 			children = (
 				2057AEA327348D4200950EF8 /* Fave.storyboard */,
+				2057AEA5273490F400950EF8 /* FaveViewController.swift */,
 			);
 			path = Fave;
+			sourceTree = "<group>";
+		};
+		2057AEA92734911E00950EF8 /* Fave */ = {
+			isa = PBXGroup;
+			children = (
+				2057AEAA2734915500950EF8 /* ModelFave.swift */,
+			);
+			path = Fave;
+			sourceTree = "<group>";
+		};
+		206B1A182735D60700549639 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				206B1A192735D61B00549639 /* User.storyboard */,
+				206B1A1B2735D65B00549639 /* UserViewController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		208BF43D271885A100F07B6F /* Application */ = {
@@ -334,6 +365,7 @@
 		20B3B7FD27272DDB0080341C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				206B1A182735D60700549639 /* User */,
 				202B1716271E0CC4002C5AA2 /* Main */,
 				20B3B7F3272726760080341C /* Auth */,
 				20B3B7F4272727140080341C /* App */,
@@ -367,6 +399,7 @@
 		20ECA7362725D10A007DB8F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2057AEA92734911E00950EF8 /* Fave */,
 				2008A82927318326004D4CC4 /* Cities */,
 				20A9CA3E272C7B020035305E /* Global */,
 				20A9CA3A272C77A00035305E /* Auth */,
@@ -386,6 +419,7 @@
 				20A9CA45272C8C7C0035305E /* ServiceUsers.swift */,
 				20A9CA49272C8CCA0035305E /* ServiceUtils.swift */,
 				20A9CA4D272CAB320035305E /* ServiceAuth.swift */,
+				2057AEA72734911300950EF8 /* ServiceFave.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -458,6 +492,7 @@
 				2092700E27170A9C00B9B78D /* Assets.xcassets in Resources */,
 				2092700C27170A9B00B9B78D /* Main.storyboard in Resources */,
 				20B3B7F62727272A0080341C /* App.storyboard in Resources */,
+				206B1A1A2735D61B00549639 /* User.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,9 +512,11 @@
 				2008A8262731792F004D4CC4 /* ShowFriendsViewController.swift in Sources */,
 				20147B332728070D00DE4462 /* Fields.swift in Sources */,
 				20A9CA3D272C78180035305E /* ModelFriendsGet.swift in Sources */,
+				2057AEAB2734915500950EF8 /* ModelFave.swift in Sources */,
 				2008A82B273183E7004D4CC4 /* ModelCitiesFriends.swift in Sources */,
 				20A9CA4C272CAA240035305E /* Methods.swift in Sources */,
 				20120AEA272AFA0B00BC150A /* Label.swift in Sources */,
+				2057AEA6273490F400950EF8 /* FaveViewController.swift in Sources */,
 				204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */,
 				2057AE9F2734852400950EF8 /* GroupTableViewCell.swift in Sources */,
 				208BF4392718613000F07B6F /* Data.swift in Sources */,
@@ -490,6 +527,8 @@
 				2092700927170A9B00B9B78D /* LoginViewController.swift in Sources */,
 				20A9CA4E272CAB320035305E /* ServiceAuth.swift in Sources */,
 				2057AE9C2734840300950EF8 /* CommonFriendsViewController.swift in Sources */,
+				2057AEA82734911300950EF8 /* ServiceFave.swift in Sources */,
+				206B1A1C2735D65B00549639 /* UserViewController.swift in Sources */,
 				20120AEC272B23F300BC150A /* String.swift in Sources */,
 				2057AEA12734894200950EF8 /* ModelFriendsGetManual.swift in Sources */,
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
@@ -504,6 +543,7 @@
 				2057AE9A273483F200950EF8 /* CommonGroupsViewController.swift in Sources */,
 				20A9CA48272C8CA60035305E /* ServiceFriends.swift in Sources */,
 				20A9CA46272C8C7C0035305E /* ServiceUsers.swift in Sources */,
+				20D9EC7827353B9600F9FE32 /* FaveTableViewCell.swift in Sources */,
 				2092700727170A9B00B9B78D /* SceneDelegate.swift in Sources */,
 				202B171D271E270A002C5AA2 /* ModelSecureCheckToken.swift in Sources */,
 				20927019271747EE00B9B78D /* ModelUsersGet.swift in Sources */,
