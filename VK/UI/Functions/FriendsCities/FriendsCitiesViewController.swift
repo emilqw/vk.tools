@@ -28,71 +28,71 @@ class FriendsCitiesViewController: UIViewController {
         cities = []
         tableView.reloadData()
         activityIndicator.isHidden = false
-        if let textField = userIdTextField.text{
-            var userId = ""
-            if let url = URL(string: textField){
-                userId = url.path
-                if(userId.first == "/"){
-                    userId.remove(at: userId.startIndex)
-                }
-            } else {
-                userId = textField
-            }
-            self.viewCitiesFriends(userId: userId)
-        }
-    }
-    func viewCitiesFriends(userId:String? = nil){
-        if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
-            VK.users.get(accessToken: accessToken, userIds: userId){user in
-                if let user = user {
-                    if user.error == nil {
-                        if user.response.count > 0 {
-                            VK.friends.get(accessToken: accessToken,userId: String(user.response[0].id!), fields: Fields.create(.domain,.city,.photo_200_orig)){friends in
-                                if let friends = friends {
-                                    if friends.error == nil {
-                                        if friends.response!.count > 0 {
-                                            DispatchQueue.main.async {
-                                                self.activityIndicator.isHidden = true
-                                                self.cities = VK.friends.toCitiesState(friends:friends.response!).response
-                                                self.tableView.reloadData()
-                                            }
-                                        }else {
-                                            DispatchQueue.main.async {
-                                                self.activityIndicator.isHidden = true
-                                                self.errorView(message: "Друзья не найдены!")
-                                            }
-                                        }
-                                    }else {
-                                        DispatchQueue.main.async {
-                                            self.activityIndicator.isHidden = true
-                                            self.errorView(message: friends.error!.error_msg!)
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                self.activityIndicator.isHidden = true
-                                self.errorView(message:  "Пользователь не найден!")
-                            }
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            self.activityIndicator.isHidden = true
-                            self.errorView(message: user.error!.error_msg!)
-                        }
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self.activityIndicator.isHidden = true
-                        self.errorView(message:  "Пользователь не найден!")
-                    }
-                }
+        guard let textField = userIdTextField.text else {return}
+        var userId = ""
+        if let url = URL(string: textField){
+            userId = url.path
+            if(userId.first == "/"){
+                userId.remove(at: userId.startIndex)
             }
         } else {
+            userId = textField
+        }
+        self.viewCitiesFriends(userId: userId)
+    }
+    func viewCitiesFriends(userId:String? = nil){
+        guard let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) else {
             activityIndicator.isHidden = true
             self.errorView(message: "Ошибка авторизации!")
+            return
         }
+        VK.users.get(accessToken: accessToken, userIds: userId){user in
+            guard let user = user else {
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.errorView(message:  "Пользователь не найден!")
+                }
+                return
+            }
+            guard user.error == nil else {
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.errorView(message: user.error!.error_msg!)
+                }
+                return
+            }
+            guard user.response.count > 0 else  {
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.errorView(message:  "Пользователь не найден!")
+                }
+                return
+            }
+            VK.friends.get(accessToken: accessToken,userId: String(user.response[0].id!), fields: Fields.create(.domain,.city,.photo_200_orig)){friends in
+                guard let friends = friends else {return}
+                guard friends.error == nil else {
+                    DispatchQueue.main.async {
+                        self.activityIndicator.isHidden = true
+                        self.errorView(message: friends.error!.error_msg!)
+                    }
+                    return
+                }
+                guard friends.response!.count > 0 else {
+                    DispatchQueue.main.async {
+                        self.activityIndicator.isHidden = true
+                        self.errorView(message: "Друзья не найдены!")
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.cities = VK.friends.toCitiesState(friends:friends.response!).response
+                    self.tableView.reloadData()
+                }
+            }
+            
+        }
+        
         
     }
     func errorView(message:String){

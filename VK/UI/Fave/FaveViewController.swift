@@ -72,7 +72,9 @@ class FaveTableViewController:UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showUser", sender: nil)
+        if !selectState{
+            performSegue(withIdentifier: "showUser", sender: nil)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? UserViewController {

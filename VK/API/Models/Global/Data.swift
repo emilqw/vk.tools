@@ -27,8 +27,8 @@ struct Keys {
     static let tokenVK = "tokenVK"
 }
 struct URLs {
-    static let authorizeUrl = String(format: "%@?client_id=%@&display=%@&redirect_uri=%@&scope=%@&response_type=%@&v=%@", arguments: [Data.appConfig.authorizeUrl,Data.appConfig.clientId,Data.appConfig.display,Data.appConfig.redirectUri,Data.appConfig.scope,"code",Data.appConfig.version])
+    static let authorizeUrl = String(format: "%@?client_id=%@&display=%@&redirect_uri=%@&scope=%@&response_type=%@&v=%@", arguments: [Data.appConfig.authorizeUrl, Data.appConfig.clientId, Data.appConfig.display, Data.appConfig.redirectUri, Data.appConfig.scope,"code", Data.appConfig.version])
     static func accessTokenUrl (code:String)->String{
-        return String(format: "%@?client_id=%@&client_secret=%@&redirect_uri=%@&code=%@",arguments:[Data.appConfig.accessTokenUrl,Data.appConfig.clientId,Data.appConfig.clientSecret,Data.appConfig.redirectUri,code])
+        return String(format: "%@?client_id=%@&client_secret=%@&redirect_uri=%@&code=%@",arguments:[Data.appConfig.accessTokenUrl,Data.appConfig.clientId, Data.appConfig.clientSecret, Data.appConfig.redirectUri, code])
     }
 }

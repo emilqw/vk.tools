@@ -17,21 +17,21 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Do any additional setup after loading the view.
-        if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
-            VK.users.get(accessToken: accessToken, fields: Fields.create(.domain,.status,.photo_max_orig)){user in
-                if let user = user {
-                    DispatchQueue.main.async {
-                        self.fullName.text = user.response[0].last_name!+" "+user.response[0].first_name!
-                        self.status.text = user.response[0].status!
-                        self.profileNavigationItem.title = "@"+user.response[0].domain!
-                        self.photoImageView.download(from: user.response[0].photo_max_orig!)
-                        self.indicatorView.isHidden = true
-                        let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
-                        self.photoImageView.addGestureRecognizer(tap)
-                    }
-                }
+        guard let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) else { return}
+        VK.users.get(accessToken: accessToken, fields: Fields.create(.domain,.status,.photo_max_orig)){user in
+            guard let user = user else {return}
+            DispatchQueue.main.async {
+                self.fullName.text = user.response[0].last_name!+" "+user.response[0].first_name!
+                self.status.text = user.response[0].status!
+                self.profileNavigationItem.title = "@"+user.response[0].domain!
+                self.photoImageView.download(from: user.response[0].photo_max_orig!)
+                self.indicatorView.isHidden = true
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+                self.photoImageView.addGestureRecognizer(tap)
             }
+            
         }
+        
     }
     @IBAction func onLogout(_ sender: Any) {
         let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .actionSheet)

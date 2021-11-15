@@ -20,9 +20,10 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let urlStr = navigationAction.request.url?.absoluteString {
-            print("url: "+urlStr)
+            print("url:"+urlStr)
             let urlParser = URLParser(url: urlStr)
             if let code = urlParser.checkHashByName(name: "code"){
+                print("code")
                 URLSession.shared.dataTask(with: URL(string:Data.urls.accessTokenUrl(code: code))!){data, response, error in
                     
                     if let error = error{print(error)
