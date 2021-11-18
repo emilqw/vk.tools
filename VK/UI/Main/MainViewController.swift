@@ -6,35 +6,38 @@
 //
 
 import UIKit
-
+/// Контроллер основной
+/// Проверяет авторизованность пользователя
 class MainViewController:UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        getServiceKey()
+    }
+    ///Получает токен устройства и проверяет работоспособность пользовательского токена
+    func getServiceKey(){
         VK.auth.getServiceKey{accessToken in
-            if let accessToken = accessToken {
-                if let token = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
-                    VK.auth.checkToken(accessToken: accessToken, token: token){ auth in
-                        if auth {
-                            self.goAppViewController()
-                        }else {
-                            self.goLoginViewController()
-                        }
-                    }
+            guard let accessToken = accessToken else {return}
+            guard let token = UserDefaults.standard.string(forKey: Data.keys.tokenVK) else {
+                self.showLoginViewController()
+                return
+            }
+            VK.auth.checkToken(accessToken: accessToken, token: token){ auth in
+                if auth {
+                    self.showAppViewController()
                 }else {
-                    self.goLoginViewController()
+                    self.showLoginViewController()
                 }
             }
         }
     }
-    func goLoginViewController(){
+    ///Переход в окно Авторизации
+    func showLoginViewController(){
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "segueMain", sender: nil)
         }
     }
-    func goAppViewController(){
+    ///Переход в окно Приложения
+    func showAppViewController(){
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "segueApp", sender: nil)
             

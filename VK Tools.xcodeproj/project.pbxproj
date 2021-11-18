@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2008A8262731792F004D4CC4 /* ShowFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */; };
-		2008A828273179FA004D4CC4 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A827273179FA004D4CC4 /* CityTableViewCell.swift */; };
 		2008A82B273183E7004D4CC4 /* ModelCitiesFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */; };
 		20120AEA272AFA0B00BC150A /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AE9272AFA0B00BC150A /* Label.swift */; };
 		20120AEC272B23F300BC150A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AEB272B23F300BC150A /* String.swift */; };
@@ -56,15 +55,24 @@
 		20B3B7FC272728BC0080341C /* Functions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3B7FB272728BC0080341C /* Functions.storyboard */; };
 		20B46E11272310D2000AA82F /* ModelUtilsResolveScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */; };
 		20B46E1327231204000AA82F /* PageIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B46E1227231204000AA82F /* PageIdViewController.swift */; };
-		20D9EC7827353B9600F9FE32 /* FaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9EC7727353B9600F9FE32 /* FaveTableViewCell.swift */; };
+		20BB3D652746896700435B54 /* ImageInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB3D632746896700435B54 /* ImageInfoTableViewCell.swift */; };
+		20BB3D662746896700435B54 /* ImageInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BB3D642746896700435B54 /* ImageInfoTableViewCell.xib */; };
+		20CAD3F32745527A00336236 /* ShortInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAD3F12745527A00336236 /* ShortInfoTableViewCell.swift */; };
+		20CAD3F42745527A00336236 /* ShortInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CAD3F22745527A00336236 /* ShortInfoTableViewCell.xib */; };
+		20CAD3F62745543C00336236 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAD3F52745543C00336236 /* CustomView.swift */; };
+		20CAD3F82745817F00336236 /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAD3F72745817F00336236 /* FunctionsViewController.swift */; };
 		20DF266627306E5C00D2B434 /* FriendsCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */; };
-		20DF2668273071E500D2B434 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DF2667273071E500D2B434 /* UserTableViewCell.swift */; };
 		20E5296A2722003500B38F91 /* VK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E529692722003500B38F91 /* VK.swift */; };
+		20E720A627466F2A0091FA76 /* CommonFriendsGroups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E720A527466F2A0091FA76 /* CommonFriendsGroups.storyboard */; };
+		20E720A827466F660091FA76 /* FriendsCities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E720A727466F660091FA76 /* FriendsCities.storyboard */; };
+		20E720AB27466FC30091FA76 /* RegDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E720AA27466FC30091FA76 /* RegDate.storyboard */; };
+		20E720AD27466FE30091FA76 /* PageId.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E720AC27466FE30091FA76 /* PageId.storyboard */; };
+		20E720B0274671800091FA76 /* ProgressInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E720AE274671800091FA76 /* ProgressInfoTableViewCell.swift */; };
+		20E720B1274671800091FA76 /* ProgressInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E720AF274671800091FA76 /* ProgressInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFriendsViewController.swift; sourceTree = "<group>"; };
-		2008A827273179FA004D4CC4 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCitiesFriends.swift; sourceTree = "<group>"; };
 		20120AE9272AFA0B00BC150A /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		20120AEB272B23F300BC150A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -114,10 +122,20 @@
 		20B3B7FB272728BC0080341C /* Functions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Functions.storyboard; sourceTree = "<group>"; };
 		20B46E10272310D2000AA82F /* ModelUtilsResolveScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtilsResolveScreenName.swift; sourceTree = "<group>"; };
 		20B46E1227231204000AA82F /* PageIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdViewController.swift; sourceTree = "<group>"; };
-		20D9EC7727353B9600F9FE32 /* FaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveTableViewCell.swift; sourceTree = "<group>"; };
+		20BB3D632746896700435B54 /* ImageInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoTableViewCell.swift; sourceTree = "<group>"; };
+		20BB3D642746896700435B54 /* ImageInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageInfoTableViewCell.xib; sourceTree = "<group>"; };
+		20CAD3F12745527A00336236 /* ShortInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoTableViewCell.swift; sourceTree = "<group>"; };
+		20CAD3F22745527A00336236 /* ShortInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortInfoTableViewCell.xib; sourceTree = "<group>"; };
+		20CAD3F52745543C00336236 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		20CAD3F72745817F00336236 /* FunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCitiesViewController.swift; sourceTree = "<group>"; };
-		20DF2667273071E500D2B434 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		20E529692722003500B38F91 /* VK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK.swift; sourceTree = "<group>"; };
+		20E720A527466F2A0091FA76 /* CommonFriendsGroups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CommonFriendsGroups.storyboard; sourceTree = "<group>"; };
+		20E720A727466F660091FA76 /* FriendsCities.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsCities.storyboard; sourceTree = "<group>"; };
+		20E720AA27466FC30091FA76 /* RegDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegDate.storyboard; sourceTree = "<group>"; };
+		20E720AC27466FE30091FA76 /* PageId.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PageId.storyboard; sourceTree = "<group>"; };
+		20E720AE274671800091FA76 /* ProgressInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressInfoTableViewCell.swift; sourceTree = "<group>"; };
+		20E720AF274671800091FA76 /* ProgressInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressInfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +160,7 @@
 		20120AE8272ACDD200BC150A /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				20CAD3F52745543C00336236 /* CustomView.swift */,
 				2023BAC62729D6690038A780 /* ImageView.swift */,
 				20120AE9272AFA0B00BC150A /* Label.swift */,
 				20120AED272B2F3B00BC150A /* InteractiveLinkLabel.swift */,
@@ -179,10 +198,10 @@
 		2057AE942734829100950EF8 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				20DF2667273071E500D2B434 /* UserTableViewCell.swift */,
-				2008A827273179FA004D4CC4 /* CityTableViewCell.swift */,
+				20BB3D622746894A00435B54 /* ImageInfo */,
+				20E720B22746718C0091FA76 /* ShortInfo */,
+				20E720B32746719B0091FA76 /* ProgressInfo */,
 				2057AE9E2734852400950EF8 /* GroupTableViewCell.swift */,
-				20D9EC7727353B9600F9FE32 /* FaveTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -190,6 +209,7 @@
 		2057AE95273482B900950EF8 /* FriendsCities */ = {
 			isa = PBXGroup;
 			children = (
+				20E720A727466F660091FA76 /* FriendsCities.storyboard */,
 				20DF266527306E5C00D2B434 /* FriendsCitiesViewController.swift */,
 				2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */,
 			);
@@ -199,6 +219,7 @@
 		2057AE98273483C900950EF8 /* CommonFriendsGroups */ = {
 			isa = PBXGroup;
 			children = (
+				20E720A527466F2A0091FA76 /* CommonFriendsGroups.storyboard */,
 				2057AE962734833100950EF8 /* CommonFriendsGroupsViewController.swift */,
 				2057AE99273483F200950EF8 /* CommonGroupsViewController.swift */,
 				2057AE9B2734840300950EF8 /* CommonFriendsViewController.swift */,
@@ -352,12 +373,13 @@
 		20B3B7FA272728AE0080341C /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				2057AE98273483C900950EF8 /* CommonFriendsGroups */,
 				20B3B7FB272728BC0080341C /* Functions.storyboard */,
-				2057AE942734829100950EF8 /* TableViewCell */,
-				2066C4B02721F25200464C18 /* RegDateViewController.swift */,
-				20B46E1227231204000AA82F /* PageIdViewController.swift */,
+				20CAD3F72745817F00336236 /* FunctionsViewController.swift */,
+				20E720A427466EAB0091FA76 /* RegDate */,
+				20E720A927466FA10091FA76 /* PageId */,
 				2057AE95273482B900950EF8 /* FriendsCities */,
+				2057AE98273483C900950EF8 /* CommonFriendsGroups */,
+				2057AE942734829100950EF8 /* TableViewCell */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -376,6 +398,58 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		20BB3D622746894A00435B54 /* ImageInfo */ = {
+			isa = PBXGroup;
+			children = (
+				20BB3D632746896700435B54 /* ImageInfoTableViewCell.swift */,
+				20BB3D642746896700435B54 /* ImageInfoTableViewCell.xib */,
+			);
+			path = ImageInfo;
+			sourceTree = "<group>";
+		};
+		20CAD3EE2745174800336236 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		20E720A427466EAB0091FA76 /* RegDate */ = {
+			isa = PBXGroup;
+			children = (
+				20E720AA27466FC30091FA76 /* RegDate.storyboard */,
+				2066C4B02721F25200464C18 /* RegDateViewController.swift */,
+			);
+			path = RegDate;
+			sourceTree = "<group>";
+		};
+		20E720A927466FA10091FA76 /* PageId */ = {
+			isa = PBXGroup;
+			children = (
+				20E720AC27466FE30091FA76 /* PageId.storyboard */,
+				20B46E1227231204000AA82F /* PageIdViewController.swift */,
+			);
+			path = PageId;
+			sourceTree = "<group>";
+		};
+		20E720B22746718C0091FA76 /* ShortInfo */ = {
+			isa = PBXGroup;
+			children = (
+				20CAD3F22745527A00336236 /* ShortInfoTableViewCell.xib */,
+				20CAD3F12745527A00336236 /* ShortInfoTableViewCell.swift */,
+			);
+			path = ShortInfo;
+			sourceTree = "<group>";
+		};
+		20E720B32746719B0091FA76 /* ProgressInfo */ = {
+			isa = PBXGroup;
+			children = (
+				20E720AF274671800091FA76 /* ProgressInfoTableViewCell.xib */,
+				20E720AE274671800091FA76 /* ProgressInfoTableViewCell.swift */,
+			);
+			path = ProgressInfo;
+			sourceTree = "<group>";
+		};
 		20ECA7342725D07C007DB8F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +463,7 @@
 		20ECA7352725D0C0007DB8F2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				20CAD3EE2745174800336236 /* Components */,
 				20120AE8272ACDD200BC150A /* CustomUI */,
 				2023BAC82729FB370038A780 /* Extension */,
 				208BF43A271870EE00F07B6F /* URLParser.swift */,
@@ -485,12 +560,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2057AEA427348D4200950EF8 /* Fave.storyboard in Resources */,
+				20CAD3F42745527A00336236 /* ShortInfoTableViewCell.xib in Resources */,
 				20B3B7F9272727D30080341C /* Profile.storyboard in Resources */,
+				20E720A827466F660091FA76 /* FriendsCities.storyboard in Resources */,
 				2092701127170A9C00B9B78D /* LaunchScreen.storyboard in Resources */,
 				20B3B7FC272728BC0080341C /* Functions.storyboard in Resources */,
+				20E720AD27466FE30091FA76 /* PageId.storyboard in Resources */,
+				20E720AB27466FC30091FA76 /* RegDate.storyboard in Resources */,
 				20B3B7F2272724D60080341C /* Auth.storyboard in Resources */,
+				20E720B1274671800091FA76 /* ProgressInfoTableViewCell.xib in Resources */,
 				2092700E27170A9C00B9B78D /* Assets.xcassets in Resources */,
 				2092700C27170A9B00B9B78D /* Main.storyboard in Resources */,
+				20E720A627466F2A0091FA76 /* CommonFriendsGroups.storyboard in Resources */,
+				20BB3D662746896700435B54 /* ImageInfoTableViewCell.xib in Resources */,
 				20B3B7F62727272A0080341C /* App.storyboard in Resources */,
 				206B1A1A2735D61B00549639 /* User.storyboard in Resources */,
 			);
@@ -523,17 +605,18 @@
 				2066C4B12721F25200464C18 /* RegDateViewController.swift in Sources */,
 				2023BAC72729D6690038A780 /* ImageView.swift in Sources */,
 				202B171B271E236B002C5AA2 /* ModelAuth.swift in Sources */,
-				20DF2668273071E500D2B434 /* UserTableViewCell.swift in Sources */,
 				2092700927170A9B00B9B78D /* LoginViewController.swift in Sources */,
 				20A9CA4E272CAB320035305E /* ServiceAuth.swift in Sources */,
 				2057AE9C2734840300950EF8 /* CommonFriendsViewController.swift in Sources */,
 				2057AEA82734911300950EF8 /* ServiceFave.swift in Sources */,
+				20CAD3F32745527A00336236 /* ShortInfoTableViewCell.swift in Sources */,
+				20CAD3F82745817F00336236 /* FunctionsViewController.swift in Sources */,
 				206B1A1C2735D65B00549639 /* UserViewController.swift in Sources */,
 				20120AEC272B23F300BC150A /* String.swift in Sources */,
 				2057AEA12734894200950EF8 /* ModelFriendsGetManual.swift in Sources */,
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
 				202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */,
-				2008A828273179FA004D4CC4 /* CityTableViewCell.swift in Sources */,
+				20CAD3F62745543C00336236 /* CustomView.swift in Sources */,
 				208BF4412718C4DE00F07B6F /* ProfileViewController.swift in Sources */,
 				20A9CA40272C7B190035305E /* Global.swift in Sources */,
 				20E5296A2722003500B38F91 /* VK.swift in Sources */,
@@ -543,9 +626,10 @@
 				2057AE9A273483F200950EF8 /* CommonGroupsViewController.swift in Sources */,
 				20A9CA48272C8CA60035305E /* ServiceFriends.swift in Sources */,
 				20A9CA46272C8C7C0035305E /* ServiceUsers.swift in Sources */,
-				20D9EC7827353B9600F9FE32 /* FaveTableViewCell.swift in Sources */,
 				2092700727170A9B00B9B78D /* SceneDelegate.swift in Sources */,
 				202B171D271E270A002C5AA2 /* ModelSecureCheckToken.swift in Sources */,
+				20BB3D652746896700435B54 /* ImageInfoTableViewCell.swift in Sources */,
+				20E720B0274671800091FA76 /* ProgressInfoTableViewCell.swift in Sources */,
 				20927019271747EE00B9B78D /* ModelUsersGet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

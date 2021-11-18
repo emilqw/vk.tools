@@ -15,47 +15,52 @@ class FaveTableViewController:UITableViewController {
         super.viewDidLoad()
         getPages()
         self.tableView.allowsMultipleSelectionDuringEditing = true
+        tableView.register(UINib(nibName: "ImageInfoTableViewCell", bundle: nibBundle), forCellReuseIdentifier: "cell")
     }
     @IBAction func onSelect(_ sender: Any) {
-        if selectState {
+        switch(selectState){
+        case true:
             self.selectButton.setTitle("Выбрать",for: .normal)
             self.tableView.isEditing = false
             self.selectState = false
-        } else {
+            break;
+        case false:
             self.selectButton.setTitle("Отмена", for: .normal)
             self.tableView.isEditing = true
             self.selectState = true
+            break;
         }
     }
     func getPages(){
-        if let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) {
-            VK.fave.getPages(accessToken: accessToken,fields: Fields.create(.photo_200_orig)){faves in
-                if let faves = faves {
-                    if faves.error == nil {
-                        if faves.response!.items!.count > 0 {
-                            DispatchQueue.main.async {
-                                self.faves = faves.response!.items!
-                                self.tableView.reloadData()
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                self.errorView(message:  "Заакладки не найдены!")
-                            }
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            self.errorView(message: faves.error!.error_msg!)
-                        }
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self.errorView(message:  "Закладки не найден!")
-                    }
-                }
-            }
-        } else {
+        guard let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) else {
             self.errorView(message: "Ошибка авторизации!")
+            return
         }
+        VK.fave.getPages(accessToken: accessToken,fields: Fields.create(.photo_200_orig)){faves in
+            guard let faves = faves else {
+                DispatchQueue.main.async {
+                    self.errorView(message:  "Закладки не найден!")
+                }
+                return
+            }
+            guard faves.error == nil else {
+                DispatchQueue.main.async {
+                    self.errorView(message: faves.error!.error_msg!)
+                }
+                return
+            }
+            guard faves.response!.items!.count > 0 else {
+                DispatchQueue.main.async {
+                    self.errorView(message:  "Заакладки не найдены!")
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self.faves = faves.response!.items!
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     @IBAction func onRefresh(_ sender: UIRefreshControl) {
         sender.endRefreshing()
@@ -67,8 +72,10 @@ class FaveTableViewController:UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fave = faves[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FaveTableViewCell") as! FaveTableViewCell
-        cell.setFave(imageUrl: fave.user!.photo_200_orig!, name: fave.user!.last_name! + " " + fave.user!.first_name!, info: fave.description)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ImageInfoTableViewCell
+        cell.cellImage.download(from:  fave.user!.photo_200_orig!)
+        cell.cellTitle.text = fave.user!.last_name! + " " + fave.user!.first_name!
+        cell.cellDescription.text = fave.description
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

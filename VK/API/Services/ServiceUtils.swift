@@ -8,6 +8,12 @@
 import Foundation
 /// Служебные методы API.
 class ServiceUtils {
+    /// Определяет тип объекта (пользователь, сообщество, приложение) и его идентификатор по короткому имени screen_name.
+    /// - Parameters:
+    ///   - accessToken: Ключ доступа.
+    ///   - screenName: Короткое имя пользователя, группы или приложения. Например, apiclub, andrew или rules_of_war.
+    ///   - v: Используемая версия API.
+    ///   - completion: Функция которая выполнится после успешного получения данных.
     static func resolveScreenName(accessToken:String,screenName:String,v:String? = nil,completion: @escaping (ModelUtilsResolveScreenName?)->()){
         var queryItems:[URLQueryItem] = Array()
         queryItems.append(URLQueryItem(name: "screen_name", value: screenName))

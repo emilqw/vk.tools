@@ -7,33 +7,37 @@
 
 import UIKit
 import WebKit
-
+/// Контроллер отображающий профиль текущего пользователя
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var profileNavigationItem: UINavigationItem!
+    /// Изображение пользователя
     @IBOutlet weak var photoImageView: CustomImageView!
+    /// Полное имя пользователя
     @IBOutlet weak var fullName: CustomLabel!
+    /// Статус пользователя
     @IBOutlet weak var status: UILabel!
+    /// Индикатор загрузки страницы
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Do any additional setup after loading the view.
+    }
+    ///Получить и отобразить профиль пользователя
+    func getProfile(){
         guard let accessToken = UserDefaults.standard.string(forKey: Data.keys.tokenVK) else { return}
         VK.users.get(accessToken: accessToken, fields: Fields.create(.domain,.status,.photo_max_orig)){user in
             guard let user = user else {return}
             DispatchQueue.main.async {
                 self.fullName.text = user.response[0].last_name!+" "+user.response[0].first_name!
                 self.status.text = user.response[0].status!
-                self.profileNavigationItem.title = "@"+user.response[0].domain!
+                self.navigationItem.title = "@"+user.response[0].domain!
                 self.photoImageView.download(from: user.response[0].photo_max_orig!)
                 self.indicatorView.isHidden = true
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
                 self.photoImageView.addGestureRecognizer(tap)
             }
-            
         }
-        
     }
-    @IBAction func onLogout(_ sender: Any) {
+    /// Событие нажатия на кнопку выхода текущего пользователя из своего профиля
+    @IBAction func onLogout(_ sender: UIButton) {
         let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .actionSheet)
         let okButton = UIAlertAction(title: "Да", style: .destructive) { sender in
             self.clearAllDataWKWebsite()
@@ -49,6 +53,7 @@ class ProfileViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    /// Очистить весь кэш пользователя
     func clearAllDataWKWebsite(){
         URLCache.shared.removeAllCachedResponses()
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
@@ -58,6 +63,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    /// Событие по нажатию на изображение профиля открывает  его на весь экран
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
         let imageView = sender.view as! UIImageView
         let newImageView = UIImageView(image: imageView.image)
@@ -72,6 +78,7 @@ class ProfileViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    ///  Событие по нажатию на открыток на весь экран изображение закрывает  его
     @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false

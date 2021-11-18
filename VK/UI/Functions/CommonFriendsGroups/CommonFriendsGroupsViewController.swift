@@ -9,15 +9,11 @@ import UIKit
 
 class CommonFriendsGroupsViewController: UIViewController {
 
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchType: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    @IBAction func onShowCommonFriends(_ sender: Any) {
-        performSegue(withIdentifier: "showCommonFriends", sender: nil)
-    }
-    @IBAction func onCommonGroups(_ sender: Any) {
-        performSegue(withIdentifier: "showCommonGroups", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CommonFriendsViewController {
@@ -31,5 +27,29 @@ class CommonFriendsGroupsViewController: UIViewController {
 //            destination.friends = cities[i].friends
         }
     }
-
+    @IBAction func onTypeSelected(_ sender: UISegmentedControl) {
+        switch(sender.selectedSegmentIndex){
+        case 0:
+            searchButton.setTitle("Поиск общих друзей", for: .normal)
+            break
+        case 1:
+            searchButton.setTitle("Поиск общих сообществ", for: .normal)
+            break
+        default:
+            break;
+        }
+    }
+    
+    @IBAction func onCommon(_ sender: UIButton) {
+        switch(searchType.selectedSegmentIndex){
+        case 0:
+            performSegue(withIdentifier: "showCommonFriends", sender: nil)
+            break
+        case 1:
+            performSegue(withIdentifier: "showCommonGroups", sender: nil)
+            break
+        default:
+            break;
+        }
+    }
 }

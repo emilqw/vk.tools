@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t0j-bT-BEI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Дата регистрации-->
+        <scene sceneID="QNz-Eg-m7F">
+            <objects>
+                <viewController storyboardIdentifier="RegDate" id="t0j-bT-BEI" customClass="RegDateViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NCQ-8v-xaF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Узнать, когда была создана страница пользователя ВКонтакте." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZj-1o-Dya">
+                                <rect key="frame" x="16" y="60" width="382" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-jG-0tw">
+                                <rect key="frame" x="16" y="114.5" width="382" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Проверить себя"/>
+                                <connections>
+                                    <action selector="onMyRegDate:" destination="t0j-bT-BEI" eventType="touchUpInside" id="VHa-97-xN1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="или другого пользователя ВКонтакте" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9M-IX-BCG">
+                                <rect key="frame" x="16" y="161.5" width="382" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите адрес или ID страницы" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="XAm-ZN-Ca4">
+                                <rect key="frame" x="16" y="197" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hW-2y-mA2">
+                                <rect key="frame" x="16" y="247" width="382" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Проверить пользователя"/>
+                                <connections>
+                                    <action selector="onUserRegDate:" destination="t0j-bT-BEI" eventType="touchUpInside" id="BmT-EU-yk3"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4LZ-De-bwi">
+                                <rect key="frame" x="16" y="310" width="382" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V5-GV-QBU">
+                                <rect key="frame" x="16" y="310" width="382" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="frC-Nh-sHg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="2hW-2y-mA2" secondAttribute="trailing" constant="16" id="0IF-xu-zYd"/>
+                            <constraint firstItem="XAm-ZN-Ca4" firstAttribute="top" secondItem="M9M-IX-BCG" secondAttribute="bottom" constant="16" id="1P1-bW-XNj"/>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="4LZ-De-bwi" secondAttribute="trailing" constant="16" id="1sf-jy-Nlg"/>
+                            <constraint firstItem="BrE-jG-0tw" firstAttribute="top" secondItem="XZj-1o-Dya" secondAttribute="bottom" constant="16" id="5kf-Xi-Y6u"/>
+                            <constraint firstItem="M9M-IX-BCG" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="87a-4a-6ed"/>
+                            <constraint firstItem="XZj-1o-Dya" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="HfD-La-sIR"/>
+                            <constraint firstItem="XZj-1o-Dya" firstAttribute="top" secondItem="frC-Nh-sHg" secondAttribute="top" constant="16" id="K1c-DW-1Yh"/>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="BrE-jG-0tw" secondAttribute="trailing" constant="16" id="KEz-rn-F3v"/>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="XAm-ZN-Ca4" secondAttribute="trailing" constant="16" id="Ps5-CV-uEM"/>
+                            <constraint firstItem="0V5-GV-QBU" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="W1p-ca-Rvx"/>
+                            <constraint firstItem="2hW-2y-mA2" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="bQ6-0J-8ew"/>
+                            <constraint firstItem="4LZ-De-bwi" firstAttribute="top" secondItem="2hW-2y-mA2" secondAttribute="bottom" constant="32" id="fuE-Rx-52l"/>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="XZj-1o-Dya" secondAttribute="trailing" constant="16" id="g32-dR-c0h"/>
+                            <constraint firstItem="4LZ-De-bwi" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="gQ7-pE-Yf3"/>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="0V5-GV-QBU" secondAttribute="trailing" constant="16" id="lEE-vf-2OF"/>
+                            <constraint firstItem="XAm-ZN-Ca4" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="lQ5-1T-9T5"/>
+                            <constraint firstItem="0V5-GV-QBU" firstAttribute="top" secondItem="2hW-2y-mA2" secondAttribute="bottom" constant="32" id="pKn-tH-QbJ"/>
+                            <constraint firstItem="frC-Nh-sHg" firstAttribute="trailing" secondItem="M9M-IX-BCG" secondAttribute="trailing" constant="16" id="qzl-Cr-99K"/>
+                            <constraint firstItem="2hW-2y-mA2" firstAttribute="top" secondItem="XAm-ZN-Ca4" secondAttribute="bottom" constant="16" id="sVn-CE-0jl"/>
+                            <constraint firstItem="BrE-jG-0tw" firstAttribute="leading" secondItem="frC-Nh-sHg" secondAttribute="leading" constant="16" id="z28-aU-bKt"/>
+                            <constraint firstItem="M9M-IX-BCG" firstAttribute="top" secondItem="BrE-jG-0tw" secondAttribute="bottom" constant="16" id="z8m-I4-88q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Дата регистрации" id="u71-Uh-czh"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="4LZ-De-bwi" id="Sdf-6h-I51"/>
+                        <outlet property="regDateLabel" destination="0V5-GV-QBU" id="T5N-H4-6Yf"/>
+                        <outlet property="userIdTextField" destination="XAm-ZN-Ca4" id="23V-gO-mx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nI-GD-5dH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1604" y="452"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

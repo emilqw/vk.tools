@@ -7,8 +7,8 @@
 
 import UIKit
 import WebKit
-
-class AuthViewController:UIViewController, WKNavigationDelegate{
+///Контроллер авторизации через VK
+class AuthViewController:UIViewController{
     var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,10 @@ class AuthViewController:UIViewController, WKNavigationDelegate{
         let urlRequest = URLRequest.init(url: URL.init(string: Data.urls.authorizeUrl)!)
         webView.load(urlRequest)
     }
+}
+
+/// MARK: WKNavigationDelegate
+extension AuthViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let urlStr = navigationAction.request.url?.absoluteString {
             print("url:"+urlStr)

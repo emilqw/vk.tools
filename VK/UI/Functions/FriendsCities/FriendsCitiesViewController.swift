@@ -16,6 +16,7 @@ class FriendsCitiesViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "ProgressInfoTableViewCell", bundle: nibBundle), forCellReuseIdentifier: "cell")
     }
     
     @IBAction func onMyFriendsCities(_ sender: Any) {
@@ -109,12 +110,19 @@ extension FriendsCitiesViewController: UITableViewDataSource,UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let city = cities[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell") as! CityTableViewCell
-        cell.setCity(cityTitle: city.cityTitle, value: city.value)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProgressInfoTableViewCell
+        cell.setData(title: city.cityTitle, value: city.value)
+        cell.setConstraint(constant: 0)
+        if city.cityTitle == "Не указано"
+        {
+            
+            cell.setTintColor(color: .red)
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showCityFriends", sender: self)
+        tableView.cellForRow(at: indexPath)?.isSelected = false
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ShowFriendsViewController {

@@ -103,7 +103,6 @@
                         <outlet property="fullName" destination="9eP-qb-pMY" id="E8B-iB-swd"/>
                         <outlet property="indicatorView" destination="6yN-jX-97k" id="zAH-nB-EM8"/>
                         <outlet property="photoImageView" destination="cJu-eR-f4U" id="Hhw-Z3-RF7"/>
-                        <outlet property="profileNavigationItem" destination="1eL-CB-N2v" id="yq5-ZU-QqM"/>
                         <outlet property="status" destination="NNb-aY-asA" id="KhQ-FI-dCe"/>
                     </connections>
                 </viewController>

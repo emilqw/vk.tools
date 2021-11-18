@@ -18,6 +18,15 @@ class ServiceUsers {
      - parameter completion: Токен пользователя.
      - returns: void
      */
+    
+    /// Возвращает расширенную информацию о пользователях.
+    /// - Parameters:
+    ///   - accessToken: Ключ доступа.
+    ///   - userIds: Перечисленные через запятую идентификаторы пользователей или их короткие имена (screen_name). По умолчанию — идентификатор текущего пользователя.
+    ///   - fields: Перечисленные через запятую дополнительные поля профилей, которые необходимо вернуть.
+    ///   - nameCase: падеж для склонения имени и фамилии пользователя. Возможные значения: именительный – nom, родительный – gen, дательный – dat, винительный – acc, творительный – ins, предложный – abl. По умолчанию nom.
+    ///   - v: Используемая версия API.
+    ///   - completion: Функция которая выполнится после успешного получения данных.
     static func get(accessToken:String,userIds:String? = nil,fields:String? = nil,nameCase:String? = nil,v:String? = nil,completion: @escaping (ModelUsersGet?)->()){
         var queryItems:[URLQueryItem] = Array()
         (userIds != nil) ? queryItems.append(URLQueryItem(name: "user_ids", value: userIds ?? "")):()

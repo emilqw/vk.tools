@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J5A-YV-JBt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Города друзей-->
+        <scene sceneID="TxI-cZ-Aqv">
+            <objects>
+                <viewController id="J5A-YV-JBt" customClass="FriendsCitiesViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zqA-Fc-C2V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJq-5n-ZCP">
+                                <rect key="frame" x="16" y="60" width="382" height="95.5"/>
+                                <string key="text">Узнать, в каких городах проживают Ваши друзья или друзья другого пользователя социальной сети ВКонтакте. Это поможет для определения города интересующего Вас пользователя, если город не указан в его профиле.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q69-E0-Ul2">
+                                <rect key="frame" x="16" y="171.5" width="382" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Проверить моих друзей"/>
+                                <connections>
+                                    <action selector="onMyFriendsCities:" destination="J5A-YV-JBt" eventType="touchUpInside" id="ba0-DZ-eTx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="или проверить друзей другого пользователя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0o-j9-IPx">
+                                <rect key="frame" x="16" y="218.5" width="382" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите адрес или ID страницы" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="4QG-vV-NVa">
+                                <rect key="frame" x="16" y="254" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCV-tl-leH">
+                                <rect key="frame" x="16" y="304" width="382" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Проверить друзей пользователя"/>
+                                <connections>
+                                    <action selector="onUserFriendsCities:" destination="J5A-YV-JBt" eventType="touchUpInside" id="N52-mc-IOZ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IBC-ZU-crq">
+                                <rect key="frame" x="16" y="351" width="382" height="495"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="QaC-KV-A82">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kMl-Lw-dUH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4QG-vV-NVa" firstAttribute="top" secondItem="X0o-j9-IPx" secondAttribute="bottom" constant="16" id="0Z4-wQ-oP8"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="trailing" secondItem="NCV-tl-leH" secondAttribute="trailing" constant="16" id="1N9-4f-JRr"/>
+                            <constraint firstItem="IBC-ZU-crq" firstAttribute="top" secondItem="NCV-tl-leH" secondAttribute="bottom" constant="16" id="6hV-z8-bBE"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="trailing" secondItem="IBC-ZU-crq" secondAttribute="trailing" constant="16" id="8Bc-hS-DoW"/>
+                            <constraint firstItem="NCV-tl-leH" firstAttribute="top" secondItem="4QG-vV-NVa" secondAttribute="bottom" constant="16" id="9rk-2H-xiF"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="trailing" secondItem="4QG-vV-NVa" secondAttribute="trailing" constant="16" id="CLI-Tf-Zeu"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="bottom" secondItem="IBC-ZU-crq" secondAttribute="bottom" constant="16" id="FDN-cz-Wkh"/>
+                            <constraint firstItem="pJq-5n-ZCP" firstAttribute="leading" secondItem="kMl-Lw-dUH" secondAttribute="leading" constant="16" id="G5j-bI-YTj"/>
+                            <constraint firstItem="X0o-j9-IPx" firstAttribute="top" secondItem="Q69-E0-Ul2" secondAttribute="bottom" constant="16" id="Hzi-5X-qFK"/>
+                            <constraint firstItem="Q69-E0-Ul2" firstAttribute="leading" secondItem="kMl-Lw-dUH" secondAttribute="leading" constant="16" id="XF6-K5-U9Z"/>
+                            <constraint firstItem="X0o-j9-IPx" firstAttribute="leading" secondItem="kMl-Lw-dUH" secondAttribute="leading" constant="16" id="cZ2-i5-IYc"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="trailing" secondItem="pJq-5n-ZCP" secondAttribute="trailing" constant="16" id="dOE-s8-Jft"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="trailing" secondItem="Q69-E0-Ul2" secondAttribute="trailing" constant="16" id="ddL-vL-rqN"/>
+                            <constraint firstItem="IBC-ZU-crq" firstAttribute="leading" secondItem="kMl-Lw-dUH" secondAttribute="leading" constant="16" id="dgZ-iV-Lc0"/>
+                            <constraint firstItem="4QG-vV-NVa" firstAttribute="leading" secondItem="kMl-Lw-dUH" secondAttribute="leading" constant="16" id="ewF-2M-ZV4"/>
+                            <constraint firstItem="NCV-tl-leH" firstAttribute="leading" secondItem="kMl-Lw-dUH" secondAttribute="leading" constant="16" id="jlG-eD-uuB"/>
+                            <constraint firstItem="Q69-E0-Ul2" firstAttribute="top" secondItem="pJq-5n-ZCP" secondAttribute="bottom" constant="16" id="kHO-TM-tEw"/>
+                            <constraint firstItem="kMl-Lw-dUH" firstAttribute="trailing" secondItem="X0o-j9-IPx" secondAttribute="trailing" constant="16" id="l3P-nl-1zu"/>
+                            <constraint firstItem="pJq-5n-ZCP" firstAttribute="top" secondItem="kMl-Lw-dUH" secondAttribute="top" constant="16" id="ukw-CG-uet"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Города друзей" id="kjZ-Qe-xry">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="Jaw-PN-EHJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="QaC-KV-A82" id="REC-jY-Lhu"/>
+                        <outlet property="tableView" destination="IBC-ZU-crq" id="N2S-Q8-Ehy"/>
+                        <outlet property="userIdTextField" destination="4QG-vV-NVa" id="rYG-ad-gxO"/>
+                        <segue destination="Z1o-Wq-ag0" kind="show" identifier="showCityFriends" id="dq2-eq-t6b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QzW-UF-SKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="452"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="5kV-BT-Tmc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="csh-5Z-hcb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="v4C-lZ-gzg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5e-Tx-k6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="1606"/>
+        </scene>
+        <!--Show Friends View Controller-->
+        <scene sceneID="fQz-Yk-AaT">
+            <objects>
+                <viewController id="Z1o-Wq-ag0" customClass="ShowFriendsViewController" customModule="VK_Tools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QpO-eX-Ztu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K6O-Ee-VGe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="71Y-Vv-kMl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="71Y-Vv-kMl" firstAttribute="trailing" secondItem="K6O-Ee-VGe" secondAttribute="trailing" id="0BD-Z4-TJX"/>
+                            <constraint firstItem="71Y-Vv-kMl" firstAttribute="bottom" secondItem="K6O-Ee-VGe" secondAttribute="bottom" id="2JL-yt-7oR"/>
+                            <constraint firstItem="K6O-Ee-VGe" firstAttribute="top" secondItem="71Y-Vv-kMl" secondAttribute="top" id="ujQ-4i-Ljd"/>
+                            <constraint firstItem="K6O-Ee-VGe" firstAttribute="leading" secondItem="71Y-Vv-kMl" secondAttribute="leading" id="xW7-aE-8jd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="i4Y-hH-i8N"/>
+                    <connections>
+                        <outlet property="navigation" destination="i4Y-hH-i8N" id="Fbk-Yo-9eN"/>
+                        <outlet property="tableView" destination="K6O-Ee-VGe" id="DH7-3d-ztz"/>
+                        <segue destination="csh-5Z-hcb" kind="show" identifier="showUser" id="bb6-I5-iGE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3u-27-IK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-397" y="1140"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

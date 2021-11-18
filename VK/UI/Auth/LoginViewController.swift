@@ -6,6 +6,7 @@
 //
 
 import UIKit
+///Контроллер авторизации
 class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()

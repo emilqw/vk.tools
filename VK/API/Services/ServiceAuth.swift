@@ -7,6 +7,9 @@
 
 import Foundation
 class ServiceAuth {
+    
+    /// Позволяет получить ключ доступа.
+    /// - Parameter completion: Функция которая выполнится после успешного получения данных.
     static func getServiceKey(completion: @escaping (String?)->() ){
         let authorizeUrl = String(format: "%@?client_id=%@&client_secret=%@&v=%@&grant_type=client_credentials", arguments: [Data.appConfig.accessTokenUrl,Data.appConfig.clientId,Data.appConfig.clientSecret,Data.appConfig.version])
         let url = URL(string: authorizeUrl)!
@@ -27,6 +30,11 @@ class ServiceAuth {
             }
         }.resume()
     }
+    /// Позволяет проверять валидность ключа доступа пользователя в iFrame, VK Mini Apps и Standalone-приложениях с помощью передаваемого в приложения параметра access_token.
+    /// - Parameters:
+    ///   - accessToken: Ключ доступа.
+    ///   - token: Клиентский ключ доступа.
+    ///   - completion: Функция которая выполнится после успешного получения данных.
     static func checkToken(accessToken:String,token:String, completion:@escaping (Bool)->()){
         let urlComponents = URLCreate(method: Methods.secure.checkToken, queryItems: [
             URLQueryItem(name: "token", value: token),
