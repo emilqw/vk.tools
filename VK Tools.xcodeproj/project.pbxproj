@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2008A8262731792F004D4CC4 /* ShowFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */; };
 		2008A82B273183E7004D4CC4 /* ModelCitiesFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */; };
-		20120AEC272B23F300BC150A /* String+IsInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AEB272B23F300BC150A /* String+IsInt.swift */; };
 		20120AEE272B2F3B00BC150A /* InteractiveLinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20120AED272B2F3B00BC150A /* InteractiveLinkLabel.swift */; };
 		20147B332728070D00DE4462 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20147B322728070D00DE4462 /* Fields.swift */; };
 		202B171B271E236B002C5AA2 /* ModelAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B171A271E236B002C5AA2 /* ModelAuth.swift */; };
@@ -25,6 +24,7 @@
 		204BA50B274EB843004AEECB /* URLQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204BA50A274EB843004AEECB /* URLQueryItems.swift */; };
 		204BA50D274EC400004AEECB /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204BA50C274EC400004AEECB /* ServiceRequest.swift */; };
 		204BA513274EFF76004AEECB /* UIViewController+ErrorShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204BA512274EFF76004AEECB /* UIViewController+ErrorShow.swift */; };
+		204BA516274F0E1D004AEECB /* String+IsInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204BA515274F0E1D004AEECB /* String+IsInt.swift */; };
 		204DF19727183AC6005D8C1B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF19627183AC6005D8C1B /* AuthViewController.swift */; };
 		2057AE972734833100950EF8 /* CommonFriendsGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE962734833100950EF8 /* CommonFriendsGroupsViewController.swift */; };
 		2057AE9A273483F200950EF8 /* CommonGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057AE99273483F200950EF8 /* CommonGroupsViewController.swift */; };
@@ -86,7 +86,6 @@
 /* Begin PBXFileReference section */
 		2008A8252731792F004D4CC4 /* ShowFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFriendsViewController.swift; sourceTree = "<group>"; };
 		2008A82A273183E7004D4CC4 /* ModelCitiesFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCitiesFriends.swift; sourceTree = "<group>"; };
-		20120AEB272B23F300BC150A /* String+IsInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsInt.swift"; sourceTree = "<group>"; };
 		20120AED272B2F3B00BC150A /* InteractiveLinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveLinkLabel.swift; sourceTree = "<group>"; };
 		20147B322728070D00DE4462 /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 		202B171A271E236B002C5AA2 /* ModelAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAuth.swift; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		204BA50A274EB843004AEECB /* URLQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItems.swift; sourceTree = "<group>"; };
 		204BA50C274EC400004AEECB /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		204BA512274EFF76004AEECB /* UIViewController+ErrorShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorShow.swift"; sourceTree = "<group>"; };
+		204BA515274F0E1D004AEECB /* String+IsInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsInt.swift"; sourceTree = "<group>"; };
 		204DF19627183AC6005D8C1B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		2057AE962734833100950EF8 /* CommonFriendsGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFriendsGroupsViewController.swift; sourceTree = "<group>"; };
 		2057AE99273483F200950EF8 /* CommonGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonGroupsViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 			children = (
 				204BA512274EFF76004AEECB /* UIViewController+ErrorShow.swift */,
 				208D6756272D3E1400B74166 /* DateFormatter+ToString.swift */,
-				20120AEB272B23F300BC150A /* String+IsInt.swift */,
+				204BA515274F0E1D004AEECB /* String+IsInt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -711,11 +711,11 @@
 				20CAD3F32745527A00336236 /* ShortInfoTableViewCell.swift in Sources */,
 				20CAD3F82745817F00336236 /* FunctionsViewController.swift in Sources */,
 				206B1A1C2735D65B00549639 /* UserViewController.swift in Sources */,
-				20120AEC272B23F300BC150A /* String+IsInt.swift in Sources */,
 				2057AEA12734894200950EF8 /* ModelFriendsGetManual.swift in Sources */,
 				2092700527170A9B00B9B78D /* AppDelegate.swift in Sources */,
 				204BA50B274EB843004AEECB /* URLQueryItems.swift in Sources */,
 				202B171F271E27A5002C5AA2 /* ModelError.swift in Sources */,
+				204BA516274F0E1D004AEECB /* String+IsInt.swift in Sources */,
 				20CAD3F62745543C00336236 /* CustomView.swift in Sources */,
 				2035C308274CE7B700FD8343 /* VKButton.swift in Sources */,
 				20A9CA40272C7B190035305E /* Global.swift in Sources */,
