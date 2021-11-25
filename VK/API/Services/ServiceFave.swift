@@ -22,28 +22,37 @@ class ServiceFave{
     ///   - v: Используемая версия API.
     ///   - completion: Функция которая выполнится после успешного получения данных.
     static func getPages(accessToken:String,offset:String? = nil,count:String? = nil,type:String? = "users",fields:String? = nil,tagId:Int? = nil,v:String? = nil,completion: @escaping (ModelFave?)->()){
-        var queryItems:[URLQueryItem] = Array()
-        (offset != nil) ? queryItems.append(URLQueryItem(name: "offset", value: String(describing:offset))):()
-        (count != nil) ? queryItems.append(URLQueryItem(name: "count", value: String(describing:count))):()
-        (type != nil) ? queryItems.append(URLQueryItem(name: "type", value: String(describing:type ?? ""))):()
-        queryItems.append(URLQueryItem(name: "fields", value: fields ?? ""))
-        (tagId != nil) ? queryItems.append(URLQueryItem(name: "tag_id", value: String(describing:tagId))):()
-        queryItems.append(URLQueryItem(name: "access_token", value: accessToken))
-        queryItems.append(URLQueryItem(name: "v", value: v ?? Data.appConfig.version))
-        let usersGetUrl = URLCreate(method: Methods.fave.getPages, queryItems: queryItems)
-        guard let url = usersGetUrl.getUrl() else { return }
-        print(url)
-        URLSession.shared.dataTask(with: url){data, response, error in
-            if let error = error{print(error)
-                return
-            }
-            guard let data = data else { return }
-            do {
-                let faves = try JSONDecoder().decode(ModelFave.self, from: data)
-                completion(faves)
-            } catch {
-                completion(nil)
-            }
-        }.resume()
+        let urlQueryItems = URLQueryItems()
+        .append(name: "offset", value: offset)
+        .append(name: "count", value: count)
+        .append(name: "type", value: type)
+        .append(name: "fields", value: fields,optional: true)
+        .append(name: "tag_id", value: tagId)
+        .append(name: "access_token", value: accessToken,optional: true)
+        .append(name: "v", value: v ?? Data.appConfig.version,optional: true)
+        guard let url = URL.createURLServiceVK(method: Methods.fave.getPages, urlQueryItems: urlQueryItems) else { return }
+        ServiceRequest.getJsonData(url: url, model: ModelFave.self) { data in
+            completion(data)
+        }
+    }
+    static func addPage(accessToken:String,userId:String,v:String? = nil,completion: @escaping (ModelFaveAddRemovePage?)->()){
+        let urlQueryItems = URLQueryItems()
+        .append(name: "user_id", value: userId,optional: true)
+        .append(name: "access_token", value: accessToken,optional: true)
+        .append(name: "v", value: v ?? Data.appConfig.version,optional: true)
+        guard let url = URL.createURLServiceVK(method: Methods.fave.addPage, urlQueryItems: urlQueryItems) else { return }
+        ServiceRequest.getJsonData(url: url, model: ModelFaveAddRemovePage.self) { data in
+            completion(data)
+        }
+    }
+    static func removePage(accessToken:String,userId:String,v:String? = nil,completion: @escaping (ModelFaveAddRemovePage?)->()){
+        let urlQueryItems = URLQueryItems()
+        .append(name: "user_id", value: userId,optional: true)
+        .append(name: "access_token", value: accessToken,optional: true)
+        .append(name: "v", value: v ?? Data.appConfig.version,optional: true)
+        guard let url = URL.createURLServiceVK(method: Methods.fave.removePage, urlQueryItems: urlQueryItems) else { return }
+        ServiceRequest.getJsonData(url: url, model: ModelFaveAddRemovePage.self) { data in
+            completion(data)
+        }
     }
 }

@@ -14,6 +14,8 @@ struct Methods {
     }
     struct fave {
         static let getPages = "fave.getPages"
+        static let addPage = "fave.addPage"
+        static let removePage = "fave.removePage"
     }
     struct friends {
         static let get = "friends.get"

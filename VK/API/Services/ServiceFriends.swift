@@ -27,32 +27,21 @@ class ServiceFriends {
     ///   - v: Используемая версия API.
     ///   - completion: Функция которая выполнится после успешного получения данных.
     static func get(accessToken:String,userId:String? = nil,fields:String? = nil,order:String? = nil,listId:Int? = nil,count:Int? = nil,offset:Int? = nil,nameCase:String? = nil,ref:String? = nil,v:String? = nil,completion: @escaping (ModelFriendsGet?)->()){
-        var queryItems:[URLQueryItem] = Array()
-        (userId != nil) ? queryItems.append(URLQueryItem(name: "user_id", value: userId ?? "")):()
-        queryItems.append(URLQueryItem(name: "fields", value: fields ?? ""))
-        (order != nil) ? queryItems.append(URLQueryItem(name: "order", value: order ?? "")):()
-        (listId != nil) ? queryItems.append(URLQueryItem(name: "list_id", value: String(describing:  listId))):()
-        (count != nil) ? queryItems.append(URLQueryItem(name: "count", value: String(describing:count))):()
-        (offset != nil) ? queryItems.append(URLQueryItem(name: "offset", value: String(describing:offset))):()
-        (nameCase != nil) ? queryItems.append(URLQueryItem(name: "name_case", value: nameCase ?? "")):()
-        (ref != nil) ? queryItems.append(URLQueryItem(name: "ref", value: ref ?? "")):()
-        queryItems.append(URLQueryItem(name: "access_token", value: accessToken))
-        queryItems.append(URLQueryItem(name: "v", value: v ?? Data.appConfig.version))
-        let usersGetUrl = URLCreate(method: Methods.friends.get, queryItems: queryItems)
-        guard let url = usersGetUrl.getUrl() else { return }
-        print(url)
-        URLSession.shared.dataTask(with: url){data, response, error in
-            if let error = error{print(error)
-                return
-            }
-            guard let data = data else { return }
-            do {
-                let friends = try JSONDecoder().decode(ModelFriendsGet.self, from: data)
-                completion(friends)
-            } catch {
-                completion(nil)
-            }
-        }.resume()
+        let urlQueryItems = URLQueryItems()
+        .append(name: "user_id", value: userId)
+        .append(name: "fields", value: fields, optional: true)
+        .append(name: "order", value: order)
+        .append(name: "list_id", value: listId)
+        .append(name: "count", value: count)
+        .append(name: "offset", value: offset)
+        .append(name: "name_case", value: nameCase)
+        .append(name: "ref", value: ref)
+        .append(name: "access_token", value: accessToken, optional: true)
+        .append(name: "v", value: v ?? Data.appConfig.version, optional: true)
+        guard let url = URL.createURLServiceVK(method: Methods.friends.get, urlQueryItems: urlQueryItems) else { return }
+        ServiceRequest.getJsonData(url: url, model: ModelFriendsGet.self) { data in
+            completion(data)
+        }
     }
     /// Возвращает список идентификаторов общих друзей между парой пользователей.
     /// - Parameters:
@@ -65,31 +54,20 @@ class ServiceFriends {
     ///   - offset: Смещение, необходимое для выборки определенного подмножества общих друзей.
     ///   - v: Используемая версия API.
     ///   - completion: Функция которая выполнится после успешного получения данных
-    static func getMutual(accessToken:String,sourceUid:String? = nil,targetUid: String? = nil,targetUids: String? = nil,order:String? = nil,count:Int? = nil,offset:Int? = nil,v:String? = nil,completion: @escaping (ModelFriendsGetManual?)->()){
-        var queryItems:[URLQueryItem] = Array()
-        (sourceUid != nil) ? queryItems.append(URLQueryItem(name: "source_uid", value: sourceUid ?? "")):()
-        queryItems.append(URLQueryItem(name: "target_uid", value: targetUid ?? ""))
-        (targetUids != nil) ? queryItems.append(URLQueryItem(name: "target_uids", value: targetUids ?? "")):()
-        (order != nil) ? queryItems.append(URLQueryItem(name: "order", value: order ?? "")):()
-        (count != nil) ? queryItems.append(URLQueryItem(name: "count", value: String(describing:count))):()
-        (offset != nil) ? queryItems.append(URLQueryItem(name: "offset", value: String(describing:offset))):()
-        queryItems.append(URLQueryItem(name: "access_token", value: accessToken))
-        queryItems.append(URLQueryItem(name: "v", value: v ?? Data.appConfig.version))
-        let usersGetUrl = URLCreate(method: Methods.friends.getMutual, queryItems: queryItems)
-        guard let url = usersGetUrl.getUrl() else { return }
-        print(url)
-        URLSession.shared.dataTask(with: url){data, response, error in
-            if let error = error{print(error)
-                return
-            }
-            guard let data = data else { return }
-            do {
-                let friends = try JSONDecoder().decode(ModelFriendsGetManual.self, from: data)
-                completion(friends)
-            } catch {
-                completion(nil)
-            }
-        }.resume()
+    static func getMutual(accessToken:String, sourceUid:String? = nil, targetUid: String? = nil, targetUids: String? = nil, order:String? = nil, count:Int? = nil, offset:Int? = nil, v:String? = nil, completion: @escaping (ModelFriendsGetManual?)->()){
+        let urlQueryItems = URLQueryItems()
+        .append(name: "source_uid", value: sourceUid)
+        .append(name: "target_uid", value: targetUid, optional: true)
+        .append(name: "target_uids", value: targetUids)
+        .append(name: "order", value: order, optional: true)
+        .append(name: "count", value: count)
+        .append(name: "offset", value: offset)
+        .append(name: "access_token", value: accessToken, optional: true)
+        .append(name: "v", value: v ?? Data.appConfig.version, optional: true)
+        guard let url = URL.createURLServiceVK(method: Methods.friends.getMutual, urlQueryItems: urlQueryItems) else { return }
+        ServiceRequest.getJsonData(url: url, model: ModelFriendsGetManual.self) { data in
+            completion(data)
+        }
     }
     /// Распределение пользователей по городам
     /// - Parameter friends: Пользователи

@@ -6,17 +6,31 @@
 //
 
 import UIKit
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    func allUIControlState( completion:@escaping (UIControl.State)->()){
+        completion(UIControl.State.normal)
+        completion(UIControl.State.highlighted)
+        completion(UIControl.State.disabled)
+        completion(UIControl.State.focused)
+        completion(UIControl.State.selected)
+        completion(UIControl.State.application)
+        completion(UIControl.State.reserved)
+    }
+    func setFont(_ size:CGFloat = 18) -> [NSAttributedString.Key:Any] {
+        return [NSAttributedString.Key.font: UIFont(name: "VKSansDisplay-Medium", size: size)!]
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().titleTextAttributes = setFont(18)
+        UINavigationBar.appearance().largeTitleTextAttributes = setFont(35)
+        allUIControlState { key in
+            UIBarButtonItem.appearance().setTitleTextAttributes(self.setFont(16), for: key)
+            UIBarItem.appearance().setTitleTextAttributes(self.setFont(), for: key)
+            UITabBarItem.appearance().setTitleTextAttributes(self.setFont(13), for: key)
+        }
         return true
     }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

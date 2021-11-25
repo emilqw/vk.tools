@@ -15,25 +15,13 @@ class ServiceUtils {
     ///   - v: Используемая версия API.
     ///   - completion: Функция которая выполнится после успешного получения данных.
     static func resolveScreenName(accessToken:String,screenName:String,v:String? = nil,completion: @escaping (ModelUtilsResolveScreenName?)->()){
-        var queryItems:[URLQueryItem] = Array()
-        queryItems.append(URLQueryItem(name: "screen_name", value: screenName))
-        queryItems.append(URLQueryItem(name: "access_token", value: accessToken))
-        queryItems.append(URLQueryItem(name: "v", value: v ?? Data.appConfig.version))
-        print(screenName)
-        let utilsResolveScreenName = URLCreate(method: Methods.utils.resolveScreenName, queryItems: queryItems)
-        guard let url = utilsResolveScreenName.getUrl() else { return }
-        print(url)
-        URLSession.shared.dataTask(with: url){data, response, error in
-            if let error = error{print(error)
-                return
-            }
-            guard let data = data else { return }
-            do {
-                let page = try JSONDecoder().decode(ModelUtilsResolveScreenName.self, from: data)
-                completion(page)
-            } catch {
-                completion(nil)
-            }
-        }.resume()
+        let urlQueryItems = URLQueryItems()
+        .append(name: "screen_name", value: screenName, optional: true)
+        .append(name: "access_token", value: accessToken, optional: true)
+        .append(name: "v", value: v ?? Data.appConfig.version, optional: true)
+        guard let url = URL.createURLServiceVK(method: Methods.utils.resolveScreenName, urlQueryItems: urlQueryItems) else { return }
+        ServiceRequest.getJsonData(url: url, model: ModelUtilsResolveScreenName.self) { data in
+            completion(data)
+        }
     }
 }

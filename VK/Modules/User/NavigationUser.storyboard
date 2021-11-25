@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r2n-AB-vDN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="PYc-Th-zhm">
+            <objects>
+                <navigationController id="r2n-AB-vDN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iC5-Tg-rLi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="VKSansDisplay-Medium" family="VK Sans Display" pointSize="20"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Mh-NB-PXP" kind="relationship" relationship="rootViewController" id="u22-8A-Jyk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFU-Xb-CGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-909" y="131"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="ggk-9e-pgW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="7Mh-NB-PXP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="N0m-ln-kbs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WX7-sA-rmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="146"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="iC5-Tg-rLi">
+            <size key="intrinsicContentSize" width="-1" height="44"/>
+        </designable>
+    </designables>
+</document>
